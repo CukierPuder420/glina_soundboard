@@ -1,0 +1,28 @@
+name: glina_soundboard
+description: Batrosz Jan Gliński soundboard &lt;3
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^0.1.2
+  soundpool: ^0.5.1
+  shake: ^0.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+    - zasoby/zdjecia/morze.jpg
+    - zasoby/audio/AAAAA_kurwa.mp3
+    - zasoby/audio/lalloueciak_napleciak.mp3
+    - zasoby/audio/strasznie_glupio.mp3
+    - zasoby/audio/major.mp3
+    - zasoby/audio/jek.mp3
+    - zasoby/audio/AAAARRRR.mp3
