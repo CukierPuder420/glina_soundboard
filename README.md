@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/CukierPuder420/glina_soundboard/tree/master.svg?style=svg)](https://circleci.com/gh/CukierPuder420/glina_soundboard/tree/master)
+
 # glina_soundboard
 
 Batrosz Jan Gliński soundboard &lt;3
