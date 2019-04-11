@@ -15,13 +15,60 @@ class GlinaSoundboard extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.pink,
       ),
-      home: StronaStartowa(tytul: 'Glina soundboard'),
+      home: SplashScreen(),
     );
   }
 }
 
+class SplashScreen extends StatefulWidget {
+  SplashScreen();
 
 
+  @override
+  _SplashScreenState createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    super.initState();
+    Timer(
+        Duration(seconds: 3),
+            (){
+          Navigator.of(context).pushReplacement(new MaterialPageRoute(builder: (BuildContext context) => AfterSplash()));
+        }
+    );
+  }
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+        body: Stack(
+            children: <Widget>[
+              new Image.asset(
+                'zasoby/zdjecia/siedzacy.jpg',
+                 fit: BoxFit.cover,
+                 height: double.infinity,
+                 width: double.infinity,
+                 alignment: Alignment.center,
+        ),
+              Center(child: Row(
+                children: <Widget>[
+                  new RichText(text: TextSpan(
+                    text: 'Glina Soundboard',
+                    style: TextStyle(
+                      fontSize: 40,
+                      color: Colors.red,
+                      fontWeight: FontWeight.bold,
+                    )
+                  )),
+                  new Icon(Icons.directions_run)
+                ],
+              )),
+            ]
+        )
+    );
+  }
+}
 
 class StronaStartowa extends StatefulWidget {
   StronaStartowa({Key klucz, this.tytul}) : super(key: klucz);
@@ -49,7 +96,6 @@ class _StronaStartowaState extends State<StronaStartowa> {
         alignment: Alignment.center,
       ),
     );
-    Timer _timer = new Timer(Duration(seconds: 5), (){navigateToSubPage(context);});
   }
 }
 
