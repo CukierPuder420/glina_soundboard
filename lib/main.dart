@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:soundpool/soundpool.dart';
 import 'package:flutter/services.dart';
-//import 'package:shake/shake.dart';
+import 'dart:async';
+import 'package:splashscreen/splashscreen.dart';
+import 'package:shake/shake.dart';
 
 void main() => runApp(GlinaSoundboard());
 
@@ -18,6 +20,9 @@ class GlinaSoundboard extends StatelessWidget {
   }
 }
 
+
+
+
 class StronaStartowa extends StatefulWidget {
   StronaStartowa({Key klucz, this.tytul}) : super(key: klucz);
 
@@ -28,6 +33,27 @@ class StronaStartowa extends StatefulWidget {
 }
 
 class _StronaStartowaState extends State<StronaStartowa> {
+
+  static Future navigateToSubPage(context) async {
+    Navigator.push(context, MaterialPageRoute(builder: (context) => AfterSplash()));
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+      body: new Image.asset(
+        'zasoby/zdjecia/siedzacy.jpg',
+        fit: BoxFit.cover,
+        height: double.infinity,
+        width: double.infinity,
+        alignment: Alignment.center,
+      ),
+    );
+    Timer _timer = new Timer(Duration(seconds: 5), (){navigateToSubPage(context);});
+  }
+}
+
+class AfterSplash extends StatelessWidget {
 
   Soundpool dzwiek = Soundpool(streamType: StreamType.music);
 
@@ -69,11 +95,11 @@ class _StronaStartowaState extends State<StronaStartowa> {
   Container kontener(int idDzwieku, var opis, Color kolor) {
     return new Container(
       child: RaisedButton(
-          onPressed: (){
-            odtworzDzwiek(idDzwieku);
-          },
-          child: Text(opis),
-          color: kolor,
+        onPressed: (){
+          odtworzDzwiek(idDzwieku);
+        },
+        child: Text(opis),
+        color: kolor,
       ),
     );
   }
@@ -81,35 +107,35 @@ class _StronaStartowaState extends State<StronaStartowa> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: (){
-          odtworzDzwiek(0);
-        },
-        label: const Text('MAJOR'),
-      ),
-      body: CustomScrollView(
-        slivers: <Widget>[
-          SliverAppBar(
-            title: Text('Glina soundboard'),
-            backgroundColor: Colors.green,
-            expandedHeight: 400.0,
-            flexibleSpace: FlexibleSpaceBar(
-              background: Image.asset('zasoby/zdjecia/morze.jpg', fit: BoxFit.cover),
+        floatingActionButton: FloatingActionButton.extended(
+          onPressed: (){
+            odtworzDzwiek(0);
+          },
+          label: const Text('MAJOR'),
+        ),
+        body: CustomScrollView(
+          slivers: <Widget>[
+            SliverAppBar(
+              title: Text('Glina soundboard'),
+              backgroundColor: Colors.green,
+              expandedHeight: 400.0,
+              flexibleSpace: FlexibleSpaceBar(
+                background: Image.asset('zasoby/zdjecia/morze.jpg', fit: BoxFit.cover),
+              ),
             ),
-          ),
-          SliverFixedExtentList(
-            itemExtent: 130.0,
-            delegate: SliverChildListDelegate(
-              [
-                kontener(1, 'AAAAA kurwa', Colors.pink),
-                kontener(2, 'lallouleciak napleciak', Colors.yellow),
-                kontener(3, 'strasznie głupio', Colors.purple),
-                kontener(4, '*jęk*', Colors.tealAccent),
-              ],
+            SliverFixedExtentList(
+              itemExtent: 130.0,
+              delegate: SliverChildListDelegate(
+                [
+                  kontener(1, 'AAAAA kurwa', Colors.pink),
+                  kontener(2, 'lallouleciak napleciak', Colors.yellow),
+                  kontener(3, 'strasznie głupio', Colors.purple),
+                  kontener(4, '*jęk*', Colors.tealAccent),
+                ],
+              ),
             ),
-          ),
-        ],
-      )
-      );
+          ],
+        )
+    );
   }
 }

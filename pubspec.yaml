@@ -11,6 +11,7 @@ dependencies:
   cupertino_icons: ^0.1.2
   soundpool: ^0.5.1
   shake: ^0.1.0
+  splashscreen: ^1.2.0
 
 dev_dependencies:
   flutter_test:
@@ -26,3 +27,4 @@ flutter:
     - zasoby/audio/major.mp3
     - zasoby/audio/jek.mp3
     - zasoby/audio/AAAARRRR.mp3
+    - zasoby/zdjecia/siedzacy.jpg
