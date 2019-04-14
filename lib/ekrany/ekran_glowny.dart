@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:glina_soundboard/funkcje/odtworz_dzwiek.dart';
-//import 'package:shake/shake.dart';
+import 'package:shake/shake.dart';
 
 class EkranGlownyState extends StatefulWidget{
   @override
@@ -19,6 +19,12 @@ class _EkranGlownyState extends State<EkranGlownyState> {
       ),
     );
   }
+
+  ShakeDetector detector = ShakeDetector.autoStart(
+      onPhoneShake: () {
+        odtworzDzwiek(5);
+      }
+  );
 
   @override
   Widget build(BuildContext context) {
