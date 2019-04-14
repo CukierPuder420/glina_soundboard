@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:soundpool/soundpool.dart';
 import 'package:flutter/services.dart';
 import 'dart:async';
-import 'package:splashscreen/splashscreen.dart';
 import 'package:shake/shake.dart';
 
 void main() => runApp(GlinaSoundboard());
