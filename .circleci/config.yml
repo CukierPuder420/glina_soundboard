@@ -13,8 +13,24 @@ jobs:
       - image: cirrusci/flutter
     steps:
       - run:
+          name: Install PIP
+          command: |
+            curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+            python get-pip.py
+      - run:
           name: Install awscli
           command: sudo pip install awscli
       - run:
           name: Deploy to S3
           command: aws s3 sync glina_soundboard/build/app/outputs/apk/release/app-release.apk s3://glina-soundboard/ --delete
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+    - build
+    - deploy:
+        requires:
+        - build
+        filters:
+          branches:
+            only: master
