@@ -3,6 +3,7 @@ jobs:
   build:
     docker:
       - image: cirrusci/flutter
+    working_directory: ~/glina_soundboard
     steps:
       - checkout
       - run: flutter doctor
@@ -11,10 +12,12 @@ jobs:
   deploy:
     docker:
       - image: cirrusci/flutter
+    working_directory: ~/glina_soundboard
     steps:
       - run:
           name: Install PIP
           command: |
+            ls
             sudo curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
             sudo python get-pip.py
       - run:
