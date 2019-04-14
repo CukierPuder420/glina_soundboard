@@ -1,41 +1,8 @@
-import 'package:soundpool/soundpool.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:glina_soundboard/funkcje/odtworz_dzwiek.dart';
 //import 'package:shake/shake.dart';
 
 class EkranGlowny extends StatelessWidget {
-
-  Soundpool dzwiek = Soundpool(streamType: StreamType.music);
-
-  void odtworzDzwiek(int idDzwieku) async {
-    var nazwaDzwieku;
-    switch(idDzwieku) {
-      case 0:
-        nazwaDzwieku = 'major';
-        break;
-      case 1:
-        nazwaDzwieku = 'AAAAA_kurwa';
-        break;
-      case 2:
-        nazwaDzwieku = 'lalloueciak_napleciak';
-        break;
-      case 3:
-        nazwaDzwieku = 'strasznie_glupio';
-        break;
-      case 4:
-        nazwaDzwieku = 'jek';
-        break;
-      case 5:
-        nazwaDzwieku = 'AAAARRRR';
-        break;
-    }
-
-    int soundId = await rootBundle.load('zasoby/audio/' + nazwaDzwieku + '.mp3').then((ByteData soundData) {
-      return dzwiek.load(soundData);
-    });
-    await dzwiek.play(soundId);
-  }
-
   /*ShakeDetector detector = ShakeDetector.autoStart(
       onPhoneShake: () {
         odtworzDzwiek(5);
