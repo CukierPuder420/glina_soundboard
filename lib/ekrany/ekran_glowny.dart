@@ -8,6 +8,7 @@ class EkranGlownyState extends StatefulWidget{
 }
 
 class _EkranGlownyState extends State<EkranGlownyState> {
+
   Container kontener(int idDzwieku, var opis, Color kolor) {
     return new Container(
       child: RaisedButton(
