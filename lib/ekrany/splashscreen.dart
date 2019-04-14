@@ -14,7 +14,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Timer(
         Duration(seconds: 3),
             (){
-          Navigator.of(context).pushReplacement(new MaterialPageRoute(builder: (BuildContext context) => EkranGlowny()));
+          Navigator.of(context).pushReplacement(new MaterialPageRoute(builder: (BuildContext context) => EkranGlownyState()));
         }
     );
   }
