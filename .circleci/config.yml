@@ -23,4 +23,4 @@ jobs:
           command: sudo pip install awscli
       - run:
           name: Deploy to S3
-          command: aws s3 sync build/app/outputs/apk/release/app-release.apk s3://glina-soundboard/ --delete --exclude "output.json"
+          command: aws s3 sync build/app/outputs/apk/release/ s3://glina-soundboard/ --delete --exclude "output.json"
