@@ -9,6 +9,7 @@ jobs:
       - run: flutter doctor
       #- run: flutter test
       - run: flutter build apk
+      - run: find . -name 'app-release.apk'
   deploy:
     docker:
       - image: cirrusci/flutter
