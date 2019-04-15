@@ -9,7 +9,6 @@ jobs:
       - run: flutter doctor
       #- run: flutter test
       - run: flutter build apk
-      - run: find . -name 'app-release.apk'
   deploy:
     docker:
       - image: cirrusci/flutter
@@ -20,17 +19,12 @@ jobs:
           command: |
             sudo curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
             sudo python get-pip.py
-            ls -al
       - run:
           name: Install awscli
           command: sudo pip install awscli
       - run:
           name: Deploy to S3
-          command: |
-            cd root
-            ls -al
-            find . -ls
-            aws s3 sync build/app/outputs/apk/release/app-release.apk s3://glina-soundboard/ --delete
+          command: aws s3 sync build/app/outputs/apk/release/app-release.apk s3://glina-soundboard/ --delete
 workflows:
   version: 2
   build-deploy:
@@ -39,6 +33,3 @@ workflows:
       - deploy:
           requires:
             - build
-          filters:
-            branches:
-              only: master
