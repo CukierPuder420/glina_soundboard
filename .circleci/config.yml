@@ -19,7 +19,7 @@ jobs:
           command: |
             sudo curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
             sudo python get-pip.py
-            ls
+            ls -al
       - run:
           name: Install awscli
           command: sudo pip install awscli
