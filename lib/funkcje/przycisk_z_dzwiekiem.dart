@@ -8,11 +8,11 @@ Container przyciskZDzwiekiem(int idDzwieku, var opis) {
       colorBrightness: ColorBrightness.light
   );
   return new Container(
-    child: new RaisedButton(
+    child: RaisedButton(
       onPressed: (){
         odtworzDzwiek(idDzwieku);
       },
-      child: new Text(opis),
+      child: Text(opis),
       color: _kolor,
     ),
   );

@@ -36,25 +36,25 @@ class _SplashScreenState extends State<SplashScreen> {
             alignment: Alignment.center,
           ),
           new Center(
-            child: new Container(
+            child: Container(
               height: 80,
-              margin: new EdgeInsets.all(25),
+              margin: EdgeInsets.all(25),
               color: Colors.white70,
-              child: new Row(
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
-                  new RichText(
-                    text: new TextSpan(
+                  RichText(
+                    text: TextSpan(
                       text: 'Glina Soundboard',
-                      style: new TextStyle(
+                      style: TextStyle(
                         fontSize: 40,
                         color: Colors.red,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),
-                  new Icon(Icons.directions_run),
+                  Icon(Icons.directions_run),
                 ],
               ),
             ),
