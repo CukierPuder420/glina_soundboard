@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:glina_soundboard/funkcje/odtworz_dzwiek.dart';
 import 'package:shake/shake.dart';
-import 'package:random_color/random_color.dart';
+import 'package:glina_soundboard/funkcje/przycisk_z_dzwiekiem.dart';
 
 class EkranGlownyState extends StatefulWidget{
   @override
@@ -9,20 +9,6 @@ class EkranGlownyState extends StatefulWidget{
 }
 
 class _EkranGlownyState extends State<EkranGlownyState> {
-
-  Container kontener(int idDzwieku, var opis) {
-    RandomColor _losowyKolor = RandomColor();
-    Color _kolor = _losowyKolor.randomColor();
-    return new Container(
-      child: RaisedButton(
-        onPressed: (){
-          odtworzDzwiek(idDzwieku);
-        },
-        child: Text(opis),
-        color: _kolor,
-      ),
-    );
-  }
 
   ShakeDetector detector = ShakeDetector.autoStart(
       onPhoneShake: () {
@@ -52,10 +38,10 @@ class _EkranGlownyState extends State<EkranGlownyState> {
           SliverGrid.count(
             crossAxisCount: 4,
             children: <Widget> [
-              kontener(1, 'AAAAA kurwa'),
-              kontener(2, 'lallouleciak napleciak'),
-              kontener(3, 'strasznie głupio'),
-              kontener(4, '*jęk*'),
+              przyciskZDzwiekiem(1, 'AAAAA kurwa'),
+              przyciskZDzwiekiem(2, 'lallouleciak napleciak'),
+              przyciskZDzwiekiem(3, 'strasznie głupio'),
+              przyciskZDzwiekiem(4, '*jęk*'),
             ],
           ),
         ],

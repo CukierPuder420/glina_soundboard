@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:glina_soundboard/ekrany/ekran_glowny.dart';
-import 'package:path_provider/path_provider.dart';
-import 'dart:io';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -10,12 +8,6 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-
-  void usuwanieCache() async {
-    Directory tempDir = await getTemporaryDirectory();
-    String tempPath = tempDir.path;
-    new Directory(tempPath).delete(recursive: true);
-  }
 
   @override
   void initState() {
@@ -29,7 +21,7 @@ class _SplashScreenState extends State<SplashScreen> {
       );
     }
     );
-    //usuwanieCache();
+
   }
   @override
   Widget build(BuildContext context) {
