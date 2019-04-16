@@ -20,43 +20,48 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Timer( Duration(seconds: 3), (){
-      Navigator.of(context).pushReplacement(new MaterialPageRoute(builder: (BuildContext context) => EkranGlownyState()));
+    Timer(
+        Duration(seconds: 3), (){
+      Navigator.of(context).pushReplacement(
+        new MaterialPageRoute(
+            builder: (BuildContext context) => EkranGlownyState()
+        ),
+      );
     }
     );
-    usuwanieCache();
+    //usuwanieCache();
   }
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-        body: Stack(
-            children: <Widget>[
-              new Image.asset(
-                'zasoby/zdjecia/siedzacy.jpg',
-                fit: BoxFit.cover,
-                height: double.infinity,
-                width: double.infinity,
-                alignment: Alignment.center,
-              ),
-              Center(
-                child: Row(
-                  children: <Widget>[
-                    new RichText(
-                      text: TextSpan(
-                        text: 'Glina Soundboard',
-                        style: TextStyle(
-                          fontSize: 40,
-                          color: Colors.red,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
+      body: Stack(
+        children: <Widget>[
+          new Image.asset(
+            'zasoby/zdjecia/siedzacy.jpg',
+            fit: BoxFit.cover,
+            height: double.infinity,
+            width: double.infinity,
+            alignment: Alignment.center,
+          ),
+          Center(
+            child: Row(
+              children: <Widget>[
+                new RichText(
+                  text: TextSpan(
+                    text: 'Glina Soundboard',
+                    style: TextStyle(
+                      fontSize: 40,
+                      color: Colors.red,
+                      fontWeight: FontWeight.bold,
                     ),
-                    new Icon(Icons.directions_run)
-                  ],
+                  ),
                 ),
-              ),
-            ],
-        ),
+                new Icon(Icons.directions_run)
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
