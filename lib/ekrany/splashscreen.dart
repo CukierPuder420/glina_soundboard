@@ -20,11 +20,9 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Timer(
-        Duration(seconds: 3),
-            (){
-          Navigator.of(context).pushReplacement(new MaterialPageRoute(builder: (BuildContext context) => EkranGlownyState()));
-        }
+    Timer( Duration(seconds: 3), (){
+      Navigator.of(context).pushReplacement(new MaterialPageRoute(builder: (BuildContext context) => EkranGlownyState()));
+    }
     );
     usuwanieCache();
   }
@@ -40,21 +38,25 @@ class _SplashScreenState extends State<SplashScreen> {
                 width: double.infinity,
                 alignment: Alignment.center,
               ),
-              Center(child: Row(
-                children: <Widget>[
-                  new RichText(text: TextSpan(
-                      text: 'Glina Soundboard',
-                      style: TextStyle(
-                        fontSize: 40,
-                        color: Colors.red,
-                        fontWeight: FontWeight.bold,
-                      )
-                  )),
-                  new Icon(Icons.directions_run)
-                ],
-              )),
-            ]
-        )
+              Center(
+                child: Row(
+                  children: <Widget>[
+                    new RichText(
+                      text: TextSpan(
+                        text: 'Glina Soundboard',
+                        style: TextStyle(
+                          fontSize: 40,
+                          color: Colors.red,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                    new Icon(Icons.directions_run)
+                  ],
+                ),
+              ),
+            ],
+        ),
     );
   }
 }

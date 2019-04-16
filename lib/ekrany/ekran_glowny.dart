@@ -33,33 +33,33 @@ class _EkranGlownyState extends State<EkranGlownyState> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        floatingActionButton: FloatingActionButton.extended(
-          onPressed: (){
-            odtworzDzwiek(0);
-          },
-          label: const Text('MAJOR'),
-        ),
-        body: CustomScrollView(
-          slivers: <Widget>[
-            SliverAppBar(
-              title: Text('Glina soundboard'),
-              backgroundColor: Colors.green,
-              expandedHeight: 400.0,
-              flexibleSpace: FlexibleSpaceBar(
-                background: Image.asset('zasoby/zdjecia/morze.jpg', fit: BoxFit.cover),
-              ),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: (){
+          odtworzDzwiek(0);
+        },
+        label: const Text('MAJOR'),
+      ),
+      body: CustomScrollView(
+        slivers: <Widget>[
+          SliverAppBar(
+            title: Text('Glina soundboard'),
+            backgroundColor: Colors.green,
+            expandedHeight: 400.0,
+            flexibleSpace: FlexibleSpaceBar(
+              background: Image.asset('zasoby/zdjecia/morze.jpg', fit: BoxFit.cover),
             ),
-            SliverGrid.count(
-              crossAxisCount: 4,
-              children: <Widget> [
-                  kontener(1, 'AAAAA kurwa'),
-                  kontener(2, 'lallouleciak napleciak'),
-                  kontener(3, 'strasznie głupio'),
-                  kontener(4, '*jęk*'),
-                ],
-            ),
-          ],
-        ),
+          ),
+          SliverGrid.count(
+            crossAxisCount: 4,
+            children: <Widget> [
+              kontener(1, 'AAAAA kurwa'),
+              kontener(2, 'lallouleciak napleciak'),
+              kontener(3, 'strasznie głupio'),
+              kontener(4, '*jęk*'),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }
