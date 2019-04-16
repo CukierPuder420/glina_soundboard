@@ -12,7 +12,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Timer(
+    new Timer(
         Duration(seconds: 3), (){
       Navigator.of(context).pushReplacement(
         new MaterialPageRoute(
@@ -26,7 +26,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      body: Stack(
+      body: new Stack(
         children: <Widget>[
           new Image.asset(
             'zasoby/zdjecia/siedzacy.jpg',
@@ -35,21 +35,28 @@ class _SplashScreenState extends State<SplashScreen> {
             width: double.infinity,
             alignment: Alignment.center,
           ),
-          Center(
-            child: Row(
-              children: <Widget>[
-                new RichText(
-                  text: TextSpan(
-                    text: 'Glina Soundboard',
-                    style: TextStyle(
-                      fontSize: 40,
-                      color: Colors.red,
-                      fontWeight: FontWeight.bold,
+          new Center(
+            child: new Container(
+              height: 80,
+              margin: new EdgeInsets.all(25),
+              color: Colors.white70,
+              child: new Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  new RichText(
+                    text: new TextSpan(
+                      text: 'Glina Soundboard',
+                      style: new TextStyle(
+                        fontSize: 40,
+                        color: Colors.red,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
-                ),
-                new Icon(Icons.directions_run)
-              ],
+                  new Icon(Icons.directions_run),
+                ],
+              ),
             ),
           ),
         ],

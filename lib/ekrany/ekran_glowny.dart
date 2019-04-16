@@ -10,7 +10,7 @@ class EkranGlownyState extends StatefulWidget{
 
 class _EkranGlownyState extends State<EkranGlownyState> {
 
-  ShakeDetector detector = ShakeDetector.autoStart(
+  ShakeDetector detector = new ShakeDetector.autoStart(
       onPhoneShake: () {
         odtworzDzwiek(5);
       }
@@ -18,24 +18,26 @@ class _EkranGlownyState extends State<EkranGlownyState> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      floatingActionButton: FloatingActionButton.extended(
+    return new Scaffold(
+      floatingActionButton: new FloatingActionButton.extended(
         onPressed: (){
           odtworzDzwiek(0);
         },
-        label: const Text('MAJOR'),
+        label: new Text('MAJOR'),
       ),
-      body: CustomScrollView(
+      body: new CustomScrollView(
         slivers: <Widget>[
-          SliverAppBar(
-            title: Text('Glina soundboard'),
+          new SliverAppBar(
+            title: new Text('Glina soundboard'),
             backgroundColor: Colors.green,
             expandedHeight: 400.0,
-            flexibleSpace: FlexibleSpaceBar(
-              background: Image.asset('zasoby/zdjecia/morze.jpg', fit: BoxFit.cover),
+            floating: true,
+            pinned: true,
+            flexibleSpace: new FlexibleSpaceBar(
+              background: new Image.asset('zasoby/zdjecia/morze.jpg', fit: BoxFit.cover),
             ),
           ),
-          SliverGrid.count(
+          new SliverGrid.count(
             crossAxisCount: 4,
             children: <Widget> [
               przyciskZDzwiekiem(1, 'AAAAA kurwa'),

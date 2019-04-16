@@ -2,7 +2,7 @@ import 'package:soundpool/soundpool.dart';
 import 'package:flutter/services.dart';
 
 void odtworzDzwiek(int idDzwieku) async {
-  Soundpool dzwiek = Soundpool(streamType: StreamType.music);
+  Soundpool dzwiek = new Soundpool(streamType: StreamType.music);
   var nazwaDzwieku;
   switch(idDzwieku) {
     case 0:

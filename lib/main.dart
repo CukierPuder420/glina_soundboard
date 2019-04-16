@@ -6,12 +6,12 @@ void main() => runApp(GlinaSoundboard());
 class GlinaSoundboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return new MaterialApp(
       title: 'Glina soundboard',
-      theme: ThemeData(
+      theme: new ThemeData(
         primarySwatch: Colors.pink,
       ),
-      home: SplashScreen(),
+      home: new SplashScreen(),
     );
   }
 }
