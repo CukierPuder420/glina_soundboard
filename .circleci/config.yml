@@ -16,10 +16,8 @@ jobs:
       - run:
           name: Decipher the files
           command: |
-            gpg android/app/key.jks.gpg
-            ${SIGN_PASSWORD}
-            gpg /android/key.properties.gpg
-            ${SIGN_PASSWORD}
+            gpg android/app/key.jks.gpg --passphrase ${SIGN_PASSWORD}
+            gpg /android/key.properties.gpg --passphrase ${SIGN_PASSWORD}
       - run:
           name: Flutter release build
           command: flutter build apk
