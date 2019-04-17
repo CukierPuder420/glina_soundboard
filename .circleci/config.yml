@@ -22,5 +22,15 @@ jobs:
           name: Install awscli
           command: sudo pip install awscli
       - run:
+          name: Install GPG
+          command: sudo apt-get install gnupg
+      - run:
+          name: Decipher the files
+          command: |
+            gpg android/app/key.jks.gpg
+            $SIGN_PASSWORD
+            gpg /android/key.properties.gpg
+            $SIGN_PASSWORD
+      - run:
           name: Deploy to S3
           command: aws s3 sync build/app/outputs/apk/release/ s3://glina-soundboard/ --delete --exclude "output.json"

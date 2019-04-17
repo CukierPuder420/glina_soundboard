@@ -41,7 +41,7 @@ class _EkranGlownyState extends State<EkranGlownyState> {
             crossAxisCount: 4,
             children: <Widget> [
               przyciskZDzwiekiem(1, 'AAAAA kurwa'),
-              przyciskZDzwiekiem(2, 'lallouleciak napleciak'),
+              przyciskZDzwiekiem(2, 'lalloueciak napleciak'),
               przyciskZDzwiekiem(3, 'strasznie głupio'),
               przyciskZDzwiekiem(4, '*jęk*'),
             ],
