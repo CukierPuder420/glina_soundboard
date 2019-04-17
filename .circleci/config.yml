@@ -12,12 +12,12 @@ jobs:
       #- run: flutter test
       - run:
           name: Install GPG
-          command: sudo apt-get install gnupg2
+          command: sudo apt-get install gnupg
       - run:
           name: Decipher the files
           command: |
-            echo $SIGN_PASSWORD | gpg2 --symmetric --passphrase-fd 0 android/app/key.jks.gpg
-            echo $SIGN_PASSWORD | gpg2 --symmetric --passphrase-fd 0 android/key.properties.gpg
+            echo $SIGN_PASSWORD | gpg --symmetric --passphrase-fd 0 android/app/key.jks.gpg
+            echo $SIGN_PASSWORD | gpg --symmetric --passphrase-fd 0 android/key.properties.gpg
       - run:
           name: Flutter release build
           command: flutter build apk
