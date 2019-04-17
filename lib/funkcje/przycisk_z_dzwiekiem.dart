@@ -5,14 +5,17 @@ import 'package:glina_soundboard/funkcje/odtworz_dzwiek.dart';
 Container przyciskZDzwiekiem(int idDzwieku, var opis) {
   RandomColor _losowyKolor = RandomColor();
   Color _kolor = _losowyKolor.randomColor(
-      colorBrightness: ColorBrightness.light
+      colorBrightness: ColorBrightness.veryLight
   );
   return new Container(
     child: RaisedButton(
       onPressed: (){
         odtworzDzwiek(idDzwieku);
       },
-      child: Text(opis),
+      child: Text(
+          opis,
+          textAlign: TextAlign.center,
+      ),
       color: _kolor,
     ),
   );
