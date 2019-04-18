@@ -16,8 +16,8 @@ jobs:
       - run:
           name: Decipher the files
           command: |
-            echo $PUBLIC_KEY | gpg --import
-            echo $PRIVATE_KEY | gpg --allow-secret-key-import --import
+            echo $PUBLIC_KEY_BASE64 | base64 --decode | gpg --import
+            echo $PRIVATE_KEY_BASE64 | base64 --decode | gpg --allow-secret-key-import --import
             echo $SIGN_PASSWORD | gpg --passphrase-fd 0 android/app/key.jks.gpg
             echo $SIGN_PASSWORD | gpg --passphrase-fd 0 android/key.properties.gpg
       - run:
