@@ -6,4 +6,4 @@
 ## [Pobierz najnowszą wersję na Androida](https://s3.eu-central-1.amazonaws.com/glina-soundboard/app-release.apk)
 Wersja na iOS będzie dostępna w najbliższym czasie.
 
-###Uwaga: żeby samodzielnie skompilować aplikację musisz wygenerować własny klucz (zamiast key.jks i key.properties). Możesz do tego użyc dołączonego skryptu keygen.bat i postępować dalej zgodnie z dokumentacją Fluttera.
+##Uwaga: żeby samodzielnie skompilować aplikację musisz wygenerować własny klucz (zamiast key.jks i key.properties). Możesz do tego użyc dołączonego skryptu keygen.bat i postępować dalej zgodnie z dokumentacją Fluttera.
