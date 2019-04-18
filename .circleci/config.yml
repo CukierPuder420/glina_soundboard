@@ -22,7 +22,7 @@ jobs:
             echo git
             echo $SIGN_PASSWORD | gpg --passphrase-fd 0 --batch android/app/key.jks.gpg
             echo git
-            echo $SIGN_PASSWORD | gpg --passphrase-fd 0 android/key.properties.gpg
+            echo $SIGN_PASSWORD | gpg --passphrase-fd 0 --batch android/key.properties.gpg
             echo git
       - run:
           name: Flutter release build
