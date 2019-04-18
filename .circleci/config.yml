@@ -11,9 +11,6 @@ jobs:
           command: flutter doctor
       #- run: flutter test
       - run:
-          name: Install GPG
-          command: sudo apt-get install gnupg
-      - run:
           name: Decipher the files
           command: |
             echo $PUBLIC_KEY_BASE64 | base64 --decode | gpg --import
