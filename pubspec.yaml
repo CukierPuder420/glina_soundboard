@@ -1,5 +1,5 @@
 name: glina_soundboard
-description: Batrosz Jan Gliński soundboard &lt;3
+description: Glina Soundboard &lt;3
 version: 1.1.0+1
 
 environment:
@@ -11,17 +11,12 @@ dependencies:
   cupertino_icons: ^0.1.2
   soundpool: ^0.5.1
   shake: ^0.1.0
-  flutter_launcher_icons: ^0.7.0
   path_provider: ^0.5.0+1
   random_color: ^1.0.3
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
-flutter_icons:
-  android: true
-  image_path_android: "zasoby/zdjecia/icon.jpg"
 
 flutter:
   uses-material-design: true
@@ -34,4 +29,3 @@ flutter:
     - zasoby/audio/jek.mp3
     - zasoby/audio/AAAARRRR.mp3
     - zasoby/zdjecia/siedzacy.jpg
-    - zasoby/zdjecia/icon.jpg
