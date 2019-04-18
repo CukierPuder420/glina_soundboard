@@ -18,7 +18,7 @@ jobs:
           command: |
             echo $PUBLIC_KEY_BASE64 | base64 --decode | gpg --import
             echo git
-            echo $PRIVATE_KEY_BASE64 | base64 --decode | gpg --import --armor --no-tty
+            echo $PRIVATE_KEY_BASE64 | base64 --decode | gpg --batch --import
             echo git
             echo $SIGN_PASSWORD | gpg --passphrase-fd 0 android/app/key.jks.gpg
             echo git
