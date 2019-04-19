@@ -23,6 +23,36 @@ void odtworzDzwiek(int idDzwieku) async {
     case 5:
       nazwaDzwieku = 'AAAARRRR';
       break;
+    case 6:
+      nazwaDzwieku = 'ahh_jest';
+      break;
+    case 7:
+      nazwaDzwieku = 'jebaniutki';
+      break;
+    case 8:
+      nazwaDzwieku = 'wooolny_jestem';
+      break;
+    case 9:
+      nazwaDzwieku = 'AAA_szkoda';
+      break;
+    case 10:
+      nazwaDzwieku = 'ajj_nieprzyjemnie';
+      break;
+    case 11:
+      nazwaDzwieku = 'famas';
+      break;
+    case 12:
+      nazwaDzwieku = 'famas_2';
+      break;
+    case 13:
+      nazwaDzwieku = 'niee';
+      break;
+    case 14:
+      nazwaDzwieku = 'nie_bawie_sie_tak';
+      break;
+    case 15:
+      nazwaDzwieku = 'kormoran';
+      break;
   }
 
   int soundId = await rootBundle.load('zasoby/audio/' + nazwaDzwieku + '.mp3').then((ByteData soundData) {
