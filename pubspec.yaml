@@ -24,19 +24,19 @@ flutter:
   assets:
     - zasoby/zdjecia/morze.jpg
     - zasoby/zdjecia/siedzacy.jpg
-    - zasoby/audio/AAAAA_kurwa.mp3
-    - zasoby/audio/lalloueciak_napleciak.mp3
-    - zasoby/audio/strasznie_glupio.mp3
+    - zasoby/audio/przyciski/AAAAA_kurwa.mp3
+    - zasoby/audio/przyciski/lalloueciak_napleciak.mp3
+    - zasoby/audio/przyciski/strasznie_glupio.mp3
     - zasoby/audio/major.mp3
-    - zasoby/audio/jek.mp3
+    - zasoby/audio/przyciski/jek.mp3
     - zasoby/audio/AAAARRRR.mp3
-    - zasoby/audio/ahh_jest.mp3
-    - zasoby/audio/jebaniutki.mp3
-    - zasoby/audio/wooolny_jestem.mp3
-    - zasoby/audio/AAA_szkoda.mp3
-    - zasoby/audio/ajj_nieprzyjemnie.mp3
-    - zasoby/audio/famas.mp3
-    - zasoby/audio/famas_2.mp3
-    - zasoby/audio/niee.mp3
-    - zasoby/audio/nie_bawie_sie_tak.mp3
-    - zasoby/audio/kormoran.mp3
+    - zasoby/audio/przyciski/ahh_jest.mp3
+    - zasoby/audio/przyciski/jebaniutki.mp3
+    - zasoby/audio/przyciski/wooolny_jestem.mp3
+    - zasoby/audio/przyciski/AAA_szkoda.mp3
+    - zasoby/audio/przyciski/ajj_nieprzyjemnie.mp3
+    - zasoby/audio/przyciski/famas.mp3
+    - zasoby/audio/przyciski/famas_2.mp3
+    - zasoby/audio/przyciski/niee.mp3
+    - zasoby/audio/przyciski/nie_bawie_sie_tak.mp3
+    - zasoby/audio/przyciski/kormoran.mp3
