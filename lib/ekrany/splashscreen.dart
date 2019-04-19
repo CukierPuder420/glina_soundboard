@@ -54,7 +54,6 @@ class _SplashScreenState extends State<SplashScreen> {
                       ),
                     ),
                   ),
-                  Icon(Icons.directions_run),
                 ],
               ),
             ),

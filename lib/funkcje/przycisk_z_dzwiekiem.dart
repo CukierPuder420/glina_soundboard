@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:random_color/random_color.dart';
 import 'package:glina_soundboard/funkcje/odtworz_dzwiek.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 Container przyciskZDzwiekiem(int idDzwieku, var opis) {
   RandomColor _losowyKolor = RandomColor();
@@ -12,9 +13,13 @@ Container przyciskZDzwiekiem(int idDzwieku, var opis) {
       onPressed: (){
         odtworzDzwiek(idDzwieku);
       },
-      child: Text(
-          opis,
-          textAlign: TextAlign.center,
+      child: AutoSizeText(
+        opis,
+        textAlign: TextAlign.center,
+        maxLines: 2,
+        style: TextStyle(fontSize: 15),
+        minFontSize: 10,
+        overflow: TextOverflow.ellipsis,
       ),
       color: _kolor,
     ),

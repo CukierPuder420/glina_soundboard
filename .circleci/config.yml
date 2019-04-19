@@ -13,10 +13,9 @@ jobs:
       - run:
           name: Decipher the files
           command: |
-            echo $PUBLIC_KEY_BASE64 | base64 --decode | gpg --import
-            echo $PRIVATE_KEY_BASE64 | base64 --decode | gpg --batch --import
-            echo $SIGN_PASSWORD | gpg --passphrase-fd 0 --batch android/app/key.jks.gpg
-            echo $SIGN_PASSWORD | gpg --passphrase-fd 0 --batch android/key.properties.gpg
+            echo $KEY_JKS | base64 --decode > android/app/key.jks
+            echo $KEY_PROPERTIES | base64 --decode > android/key.properties
+
       - run:
           name: Flutter release build
           command: flutter build apk
