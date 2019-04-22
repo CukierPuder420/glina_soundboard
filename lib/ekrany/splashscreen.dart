@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:glina_soundboard/ekrany/ekran_glowny.dart';
+import 'package:glina_soundboard/funkcje/dodajDoUlubionych.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -21,21 +22,30 @@ class _SplashScreenState extends State<SplashScreen> {
       );
     }
     );
-
+    iloscUlubionych().then((_dlugoscListy){
+      dlugoscListy = _dlugoscListy;
+    });
+    odczytajListeInty().then((_ulubioneInty){
+      ulubioneInty = _ulubioneInty;
+    });
+    odczytajListeOpisy().then((_ulubioneOpisy){
+      ulubioneOpisy = _ulubioneOpisy;
+    });
   }
+
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      body: new Stack(
+    return Scaffold(
+      body: Stack(
         children: <Widget>[
-          new Image.asset(
+          Image.asset(
             'zasoby/zdjecia/siedzacy.jpg',
             fit: BoxFit.cover,
             height: double.infinity,
             width: double.infinity,
             alignment: Alignment.center,
           ),
-          new Center(
+          Center(
             child: Container(
               height: 80,
               margin: EdgeInsets.all(25),

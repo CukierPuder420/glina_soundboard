@@ -55,7 +55,7 @@ void odtworzDzwiek(int idDzwieku) async {
       break;
   }
 
-  int soundId = await rootBundle.load('zasoby/audio/' + nazwaDzwieku + '.mp3').then((ByteData soundData) {
+  int soundId = await rootBundle.load('zasoby/audio/przyciski/' + nazwaDzwieku + '.mp3').then((ByteData soundData) {
     return dzwiek.load(soundData);
   });
   await dzwiek.play(soundId);
