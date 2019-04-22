@@ -13,30 +13,16 @@ class _EkranGlownyState extends State<EkranGlownyState> {
 
   ShakeDetector detector = ShakeDetector.autoStart(
       onPhoneShake: () {
-        odtworzDzwiek(5);
+        arrr();
       }
   );
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Glina Soundboard'),
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.star),
-            onPressed: (){
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => Ulubione()),
-              );
-            },
-          )
-        ],
-      ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: (){
-          odtworzDzwiek(0);
+          major();
         },
         label: Text('MAJOR'),
       ),
@@ -53,6 +39,17 @@ class _EkranGlownyState extends State<EkranGlownyState> {
                   flexibleSpace: FlexibleSpaceBar(
                     background: Image.asset('zasoby/zdjecia/morze.jpg', fit: BoxFit.cover),
                   ),
+                  actions: <Widget>[
+                    IconButton(
+                      icon: Icon(Icons.star),
+                      onPressed: (){
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Ulubione()),
+                        );
+                      },
+                    )
+                  ],
                 ),
                 SliverGrid.count(
                   crossAxisCount: 4,

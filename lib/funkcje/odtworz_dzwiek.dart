@@ -1,6 +1,22 @@
 import 'package:soundpool/soundpool.dart';
 import 'package:flutter/services.dart';
 
+void arrr() async {
+  Soundpool arrr = Soundpool(streamType: StreamType.music);
+  int _soundId = await rootBundle.load('zasoby/audio/AAAARRRR.mp3').then((ByteData soundData) {
+    return arrr.load(soundData);
+  });
+  await arrr.play(_soundId);
+}
+
+void major() async {
+  Soundpool major = Soundpool(streamType: StreamType.music);
+  int _soundId = await rootBundle.load('zasoby/audio/major.mp3').then((ByteData soundData) {
+    return major.load(soundData);
+  });
+  await major.play(_soundId);
+}
+
 void odtworzDzwiek(int idDzwieku) async {
   Soundpool dzwiek = Soundpool(streamType: StreamType.music);
   var nazwaDzwieku;

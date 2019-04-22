@@ -70,3 +70,14 @@ void dodajDoUlubionych(int idDzwieku, String opisDzwieku) async {
   ulubioneOpisy = await odczytajListeOpisy();
   dlugoscListy = await iloscUlubionych();
 }
+
+void usunZUlubionych(int idDzwieku, String opisDzwieku) async {
+  var numery = await odczytajListeNumery();
+  var opisy = await odczytajListeOpisy();
+  numery.remove('$idDzwieku');
+  opisy.remove(opisDzwieku);
+  zapiszListe(numery, opisy);
+  ulubioneInty = await odczytajListeInty();
+  ulubioneOpisy = await odczytajListeOpisy();
+  dlugoscListy = await iloscUlubionych();
+}
