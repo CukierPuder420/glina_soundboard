@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:glina_soundboard/ekrany/ekran_glowny.dart';
 import 'package:glina_soundboard/funkcje/dodajDoUlubionych.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -54,15 +55,15 @@ class _SplashScreenState extends State<SplashScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
-                  RichText(
-                    text: TextSpan(
-                      text: 'Glina Soundboard',
-                      style: TextStyle(
-                        fontSize: 40,
-                        color: Colors.red,
-                        fontWeight: FontWeight.bold,
-                      ),
+                  AutoSizeText.rich(
+                    TextSpan(text: 'Glina Soundboard'),
+                    style: TextStyle(
+                      fontSize: 40,
+                      color: Colors.red,
+                      fontWeight: FontWeight.bold,
                     ),
+                    minFontSize: 20,
+                    overflow: TextOverflow.ellipsis,
                   ),
                 ],
               ),

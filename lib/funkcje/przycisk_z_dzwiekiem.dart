@@ -28,7 +28,7 @@ GestureDetector przyciskZDzwiekiem(int idDzwieku, var opis, BuildContext context
           textAlign: TextAlign.center,
           maxLines: 2,
           style: TextStyle(fontSize: 15),
-          minFontSize: 10,
+          minFontSize: 6,
           overflow: TextOverflow.ellipsis,
         ),
         color: _kolor,
