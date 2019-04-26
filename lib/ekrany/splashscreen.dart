@@ -3,6 +3,8 @@ import 'dart:async';
 import 'package:glina_soundboard/ekrany/ekran_glowny.dart';
 import 'package:glina_soundboard/funkcje/dodaj_do_ulubionych.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:glina_soundboard/funkcje/kolory_przyciskow.dart';
+import 'package:glina_soundboard/funkcje/paleta_z_api.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -10,7 +12,6 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-
   @override
   void initState() {
     super.initState();
@@ -32,6 +33,12 @@ class _SplashScreenState extends State<SplashScreen> {
     odczytajListeOpisy().then((_ulubioneOpisy){
       ulubioneOpisy = _ulubioneOpisy;
     });
+    pobierzPalete().then((_paleta){
+      paleta = _paleta;
+    }).then((_paleta){
+      koloryPrzyciskow = paleta.doListyRGB();
+    });
+    
   }
 
   @override

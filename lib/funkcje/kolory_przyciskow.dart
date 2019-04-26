@@ -12,7 +12,7 @@ class HexColor extends Color {
   HexColor(final String hexColor) : super(_getColorFromHex(hexColor));
 }
 
-final List<Color> koloryPrzyciskow = [
+List<Color> koloryPrzyciskow = [
   HexColor('ff3377'),
   HexColor('ff5588'),
   HexColor('ff77aa'),
