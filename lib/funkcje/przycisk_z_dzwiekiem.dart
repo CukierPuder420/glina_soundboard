@@ -15,7 +15,7 @@ GestureDetector przyciskZDzwiekiem(int idDzwieku, var opis, BuildContext context
     onLongPress: (){
       dodajDoUlubionych(idDzwieku, opis);
       final snackBar = SnackBar(
-        content: Text('Dodano do ulubionych ❤️'),
+        content: Text('Dodano do ulubionych ❤'),
         duration: Duration(seconds: 2),
       );
       Scaffold.of(context).showSnackBar(snackBar);
@@ -27,9 +27,10 @@ GestureDetector przyciskZDzwiekiem(int idDzwieku, var opis, BuildContext context
         },
         child: AutoSizeText(
           opis,
+          softWrap: true,
           textAlign: TextAlign.center,
           maxLines: 2,
-          style: TextStyle(fontSize: 15),
+          style: TextStyle(fontSize: 13),
           minFontSize: 6,
           overflow: TextOverflow.ellipsis,
         ),

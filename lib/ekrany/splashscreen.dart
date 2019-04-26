@@ -4,7 +4,6 @@ import 'package:glina_soundboard/ekrany/ekran_glowny.dart';
 import 'package:glina_soundboard/funkcje/dodaj_do_ulubionych.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:glina_soundboard/funkcje/kolory_przyciskow.dart';
-import 'package:glina_soundboard/funkcje/paleta_z_api.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -17,6 +16,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     new Timer(
         Duration(seconds: 3), (){
+      print(paleta.paleta);
       Navigator.of(context).pushReplacement(
         new MaterialPageRoute(
             builder: (BuildContext context) => EkranGlownyState()
@@ -38,7 +38,6 @@ class _SplashScreenState extends State<SplashScreen> {
     }).then((_paleta){
       koloryPrzyciskow = paleta.doListyRGB();
     });
-    
   }
 
   @override
@@ -62,15 +61,18 @@ class _SplashScreenState extends State<SplashScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
-                  AutoSizeText.rich(
-                    TextSpan(text: 'Glina Soundboard'),
-                    style: TextStyle(
-                      fontSize: 40,
-                      color: Colors.red,
-                      fontWeight: FontWeight.bold,
+                  Expanded(
+                    child: AutoSizeText.rich(
+                      TextSpan(text: 'Glina Soundboard'),
+                      maxLines: 1,
+                      style: TextStyle(
+                        fontSize: 40,
+                        color: Colors.red,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      minFontSize: 20,
+                      overflow: TextOverflow.ellipsis,
                     ),
-                    minFontSize: 20,
-                    overflow: TextOverflow.ellipsis,
                   ),
                 ],
               ),
