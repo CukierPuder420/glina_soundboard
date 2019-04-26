@@ -1,0 +1,23 @@
+import 'package:flutter/material.dart';
+
+class HexColor extends Color {
+  static int _getColorFromHex(String hexColor) {
+    hexColor = hexColor.toUpperCase().replaceAll("#", "");
+    if (hexColor.length == 6) {
+      hexColor = "FF" + hexColor;
+    }
+    return int.parse(hexColor, radix: 16);
+  }
+
+  HexColor(final String hexColor) : super(_getColorFromHex(hexColor));
+}
+
+final List<Color> koloryPrzyciskow = [
+  HexColor('ff3377'),
+  HexColor('ff5588'),
+  HexColor('ff77aa'),
+  HexColor('ff99cc'),
+  HexColor('ffbbee'),
+];
+
+int indeksKoloru = 0;

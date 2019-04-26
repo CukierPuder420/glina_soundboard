@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:random_color/random_color.dart';
 import 'package:glina_soundboard/funkcje/odtworz_dzwiek.dart';
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:glina_soundboard/funkcje/dodajDoUlubionych.dart';
+import 'package:glina_soundboard/funkcje/dodaj_do_ulubionych.dart';
+import 'package:glina_soundboard/funkcje/kolory_przyciskow.dart';
 
 GestureDetector przyciskZDzwiekiem(int idDzwieku, var opis, BuildContext context) {
-  RandomColor _losowyKolor = RandomColor();
-  Color _kolor = _losowyKolor.randomColor(
-      colorBrightness: ColorBrightness.veryLight
-  );
+  if(indeksKoloru + 1 == koloryPrzyciskow.length) {
+    indeksKoloru = 0;
+  } else {
+    indeksKoloru++;
+  }
+  Color _kolor = koloryPrzyciskow[indeksKoloru];
   return new GestureDetector(
     onLongPress: (){
       dodajDoUlubionych(idDzwieku, opis);

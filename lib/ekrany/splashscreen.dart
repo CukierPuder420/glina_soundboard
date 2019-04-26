@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:glina_soundboard/ekrany/ekran_glowny.dart';
-import 'package:glina_soundboard/funkcje/dodajDoUlubionych.dart';
+import 'package:glina_soundboard/funkcje/dodaj_do_ulubionych.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
 class SplashScreen extends StatefulWidget {

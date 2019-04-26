@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:glina_soundboard/funkcje/dodajDoUlubionych.dart';
+import 'package:glina_soundboard/funkcje/dodaj_do_ulubionych.dart';
 import 'package:glina_soundboard/funkcje/odtworz_dzwiek.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 
