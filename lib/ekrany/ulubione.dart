@@ -21,31 +21,35 @@ class _UlubioneState extends State<Ulubione> {
       body: ListView.builder(
         itemCount: dlugoscListy,
         itemBuilder: (context, index) {
-          final numer = ulubioneInty[index];
-          final opis = ulubioneOpisy[index];
-          return Slidable(
-            child: Container(
-              child: ListTile(
-                title: Text(opis),
-                leading: Icon(Icons.play_arrow),
-                onTap: (){
-                  odtworzDzwiek(numer);
-                },
+          try{
+            final numer = ulubioneInty[index];
+            final opis = ulubioneOpisy[index];
+            return Slidable(
+              child: Container(
+                child: ListTile(
+                  title: Text(opis),
+                  leading: Icon(Icons.play_arrow),
+                  onTap: (){
+                    odtworzDzwiek(numer);
+                  },
+                ),
               ),
-            ),
-            delegate: SlidableDrawerDelegate(),
-            actions: <Widget>[
-              IconSlideAction(
-                caption: 'Usuń',
-                color: Colors.red,
-                icon: Icons.delete,
-                onTap: (){
-                  usunZUlubionych(numer, opis);
-                  super.setState((){});
-                },
-              ),
-            ],
-          );
+              delegate: SlidableDrawerDelegate(),
+              actions: <Widget>[
+                IconSlideAction(
+                  caption: 'Usuń',
+                  color: Colors.red,
+                  icon: Icons.delete,
+                  onTap: (){
+                    usunZUlubionych(numer, opis);
+                    super.setState((){});
+                  },
+                ),
+              ],
+            );
+          } catch(e) {
+            print('Za szybko odpaliłeś listę.');
+          }
         },
       ),
     );

@@ -14,14 +14,14 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    new Timer(
+    Timer(
         Duration(seconds: 3), (){
-      print(paleta.paleta);
       Navigator.of(context).pushReplacement(
-        new MaterialPageRoute(
+        MaterialPageRoute(
             builder: (BuildContext context) => EkranGlownyState()
         ),
       );
+      print('Nowa paleta kolorów: ${paleta.paleta}');
     }
     );
     iloscUlubionych().then((_dlugoscListy){
@@ -57,24 +57,18 @@ class _SplashScreenState extends State<SplashScreen> {
               height: 80,
               margin: EdgeInsets.all(25),
               color: Colors.white70,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  Expanded(
-                    child: AutoSizeText.rich(
-                      TextSpan(text: 'Glina Soundboard'),
-                      maxLines: 1,
-                      style: TextStyle(
-                        fontSize: 40,
-                        color: Colors.red,
-                        fontWeight: FontWeight.bold,
-                      ),
-                      minFontSize: 20,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                  ),
-                ],
+              alignment: Alignment(0, 0),
+              child: AutoSizeText.rich(
+                TextSpan(text: 'Glina Soundboard'),
+                maxLines: 1,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 40,
+                  color: Colors.red,
+                  fontWeight: FontWeight.bold,
+                ),
+                minFontSize: 20,
+                overflow: TextOverflow.ellipsis,
               ),
             ),
           ),

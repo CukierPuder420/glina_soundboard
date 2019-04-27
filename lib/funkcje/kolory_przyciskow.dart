@@ -21,6 +21,7 @@ Future<Paleta> pobierzPalete() async {
   final odpowiedz = await http.post('http://colormind.io/api/', body: '{"model":"default"}');
 
   if (odpowiedz.statusCode == 200) {
+    print('Udało się pobrać paletę kolorów <3');
     return Paleta.fromJson(json.decode(odpowiedz.body));
   } else {
     throw Exception('Nie udało się pobrać kolorów');

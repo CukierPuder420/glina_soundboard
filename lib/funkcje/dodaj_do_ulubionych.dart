@@ -1,5 +1,6 @@
 import 'dart:core';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter/foundation.dart';
 
 final String kluczNumery = 'glinasoundboard_ulubione_numery';
 final String kluczOpisy = 'glinasoundboard_ulubione_opisy';
@@ -17,6 +18,7 @@ void usunListy() async {
   SharedPreferences sp = await SharedPreferences.getInstance();
   sp.remove(kluczNumery);
   sp.remove(kluczOpisy);
+
 }
 
 Future<List<String>> odczytajListeNumery() async {
@@ -47,7 +49,7 @@ Future<List<int>> odczytajListeInty() async {
 }
 
 Future<int> iloscUlubionych() async {
-  var inty = await odczytajListeInty();
+  var inty = await odczytajListeNumery();
   return inty.length;
 }
 
@@ -63,11 +65,13 @@ void dodajDoUlubionych(int idDzwieku, String opisDzwieku) async {
   ulubioneOpisy = bufor.toList();
 
   zapiszListe(ulubioneNumery, ulubioneOpisy);
-  print(await odczytajListeInty());
-  print(await odczytajListeOpisy());
+
+  if(!kReleaseMode){
+    print('Lista indeksów ulubionnych: ${await odczytajListeInty()}');
+    print('Lista opisów ulubionych: ${await odczytajListeOpisy()}');
+  }
 
   ulubioneInty = await odczytajListeInty();
-  ulubioneOpisy = await odczytajListeOpisy();
   dlugoscListy = await iloscUlubionych();
 }
 
