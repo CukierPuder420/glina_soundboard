@@ -69,6 +69,9 @@ void odtworzDzwiek(int idDzwieku) async {
     case 15:
       nazwaDzwieku = 'kormoran';
       break;
+    case 16:
+      nazwaDzwieku = 'tak_jest';
+      break;
   }
 
   int soundId = await rootBundle.load('zasoby/audio/przyciski/' + nazwaDzwieku + '.mp3').then((ByteData soundData) {
