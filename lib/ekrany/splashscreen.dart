@@ -4,6 +4,7 @@ import 'package:glina_soundboard/ekrany/ekran_glowny.dart';
 import 'package:glina_soundboard/funkcje/dodaj_do_ulubionych.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:glina_soundboard/funkcje/kolory_przyciskow.dart';
+import 'package:glina_soundboard/funkcje/dni.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -38,6 +39,13 @@ class _SplashScreenState extends State<SplashScreen> {
     }).then((_paleta){
       koloryPrzyciskow = paleta.doListyRGB();
     });
+    odczytajDni().then((_dni){
+      iloscDni = _dni;
+    });
+    odczytajDate().then((_data){
+      wczoraj = _data;
+    });
+    usunDni();
   }
 
   @override

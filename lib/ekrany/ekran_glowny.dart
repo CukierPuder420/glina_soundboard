@@ -3,6 +3,8 @@ import 'package:glina_soundboard/funkcje/odtworz_dzwiek.dart';
 import 'package:shake/shake.dart';
 import 'package:glina_soundboard/funkcje/przycisk_z_dzwiekiem.dart';
 import 'package:glina_soundboard/ekrany/ulubione.dart';
+import 'package:glina_soundboard/funkcje/dni.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class EkranGlownyState extends StatefulWidget{
   @override
@@ -40,15 +42,35 @@ class _EkranGlownyState extends State<EkranGlownyState> {
                     background: Image.asset('zasoby/zdjecia/morze.jpg', fit: BoxFit.cover),
                   ),
                   actions: <Widget>[
+                    Container(
+                      child: Row(
+                        children: <Widget>[
+                          Text('$iloscDni',
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.deepOrange,
+                            ),
+                          ),
+                          Icon(
+                            MdiIcons.fire,
+                            color: Colors.deepOrange,
+                          ),
+                        ],
+                      ),
+                    ),
                     IconButton(
-                      icon: Icon(Icons.star),
+                      icon: Icon(
+                        Icons.star,
+                        color: Colors.amber,
+                      ),
                       onPressed: (){
                         Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => Ulubione()),
                         );
                       },
-                    )
+                    ),
                   ],
                 ),
                 SliverGrid.count(

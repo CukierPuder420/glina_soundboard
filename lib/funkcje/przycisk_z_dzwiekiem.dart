@@ -3,6 +3,7 @@ import 'package:glina_soundboard/funkcje/odtworz_dzwiek.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:glina_soundboard/funkcje/dodaj_do_ulubionych.dart';
 import 'package:glina_soundboard/funkcje/kolory_przyciskow.dart';
+import 'package:glina_soundboard/funkcje/dni.dart';
 
 GestureDetector przyciskZDzwiekiem(int idDzwieku, var opis, BuildContext context) {
   if(indeksKoloru + 1 == koloryPrzyciskow.length) {
@@ -24,6 +25,7 @@ GestureDetector przyciskZDzwiekiem(int idDzwieku, var opis, BuildContext context
       child: RaisedButton(
         onPressed: (){
           odtworzDzwiek(idDzwieku);
+          zmienDni();
         },
         child: AutoSizeText(
           opis,

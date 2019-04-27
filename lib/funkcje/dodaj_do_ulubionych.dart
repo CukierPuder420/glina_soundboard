@@ -2,8 +2,8 @@ import 'dart:core';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter/foundation.dart';
 
-final String kluczNumery = 'glinasoundboard_ulubione_numery';
-final String kluczOpisy = 'glinasoundboard_ulubione_opisy';
+const String kluczNumery = 'glinasoundboard_ulubione_numery';
+const String kluczOpisy = 'glinasoundboard_ulubione_opisy';
 List<int> ulubioneInty = List();
 List<String> ulubioneOpisy = List();
 int dlugoscListy;
