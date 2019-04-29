@@ -25,6 +25,7 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
+    - zasoby/zdjecia/icon.png
     - zasoby/zdjecia/morze.jpg
     - zasoby/zdjecia/siedzacy.jpg
     - zasoby/audio/przyciski/AAAAA_kurwa.mp3
