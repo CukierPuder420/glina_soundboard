@@ -7,6 +7,7 @@ const String kluczOpisy = 'glinasoundboard_ulubione_opisy';
 List<int> ulubioneInty = List();
 List<String> ulubioneOpisy = List();
 int dlugoscListy;
+bool czyGotowe = true;
 
 void zapiszListe(List<String> ulubioneNumery, List<String> ulubioneOpisy) async {
 	SharedPreferences sp = await SharedPreferences.getInstance();
@@ -53,7 +54,7 @@ Future<int> iloscUlubionych() async {
 	return inty.length;
 }
 
-void dodajDoUlubionych(int idDzwieku, String opisDzwieku) async {
+Future<bool> dodajDoUlubionych(int idDzwieku, String opisDzwieku) async {
 	List<String> ulubioneNumery = await odczytajListeNumery();
 	List<String> ulubioneOpisy = await odczytajListeOpisy();
 	ulubioneNumery.add('$idDzwieku');
@@ -73,6 +74,7 @@ void dodajDoUlubionych(int idDzwieku, String opisDzwieku) async {
 
 	ulubioneInty = await odczytajListeInty();
 	dlugoscListy = await iloscUlubionych();
+  return true;
 }
 
 void usunZUlubionych(int idDzwieku, String opisDzwieku) async {
