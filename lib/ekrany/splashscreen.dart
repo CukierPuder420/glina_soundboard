@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:async';
 import 'package:glina_soundboard/ekrany/ekran_glowny.dart';
 import 'package:glina_soundboard/funkcje/dodaj_do_ulubionych.dart';
 import 'package:auto_size_text/auto_size_text.dart';
@@ -11,33 +10,42 @@ class SplashScreen extends StatefulWidget {
   _SplashScreenState createState() => _SplashScreenState();
 }
 
+  /// KOLEJNOŚĆ AKCJI:
+  ///  * ustalenie długości listy ulubionych
+  ///  * odczytanie listy numerów ulubionych z shared_preferences, parsowanie na inty i wczytanie do RAMu
+  ///  * odczytanie listy opisów ulubionych z shared_preferences i wczytanie do RAMu
+  ///  * pobranie palety kolorów z sieci przez API colormind.io
+  ///  * zastąpienie domyślnej (różowej) palety kolorami z colormind.io
+  ///  * odczytanie ilości dni z shared_preferences i wczytanie do RAMu
+  ///  * odczytanie daty ostatniego zapisu dni z shared_preferences, parsowanie i wczytanie do RAMu
+  ///  * sprawdzenie, czy należy usunąć dni
+  ///  * skok do EkranGlownyState()
+
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
     iloscUlubionych().then((_dlugoscListy) {
       dlugoscListy = _dlugoscListy;
-    }).then((_dlugoscListy) async {
+    }).then((dump) async {
       ulubioneInty = await odczytajListeInty();
-    }).then((_dlugoscListy) async {
+    }).then((dump) async {
       ulubioneOpisy = await odczytajListeOpisy();
-    }).then((_dlugoscListy) async {
+    }).then((dump) async {
       paleta = await pobierzPalete();
-    }).then((_paleta) {
+    }).then((dump) {
       koloryPrzyciskow = paleta.doListyRGB();
-    }).then((_dlugoscListy) async {
+    }).then((dump) async {
       iloscDni = await odczytajDni();
-    }).then((_dlugoscListy) async {
+    }).then((dump) async {
       wczoraj = await odczytajDate();
-    }).then((_dlugoscListy) {
+    }).then((dump) {
       usunDni();
-    }).then((_dlugoscListy) {
-      Timer(Duration(seconds: 3), () {
-        Navigator.of(context).pushReplacement(
-          MaterialPageRoute(
-              builder: (BuildContext context) => EkranGlownyState()),
-        );
-      });
+    }).then((dump) {
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(
+            builder: (BuildContext context) => EkranGlownyState()),
+      );
     });
   }
 

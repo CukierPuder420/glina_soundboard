@@ -97,7 +97,9 @@ class _EkranGlownyState extends State<EkranGlownyState> {
                     przyciskZDzwiekiem(13, 'niee', context),
                     przyciskZDzwiekiem(14, 'nie bawię się', context),
                     przyciskZDzwiekiem(15, 'kormoran', context),
-                    przyciskZDzwiekiem(16, 'tak jest', context)
+                    przyciskZDzwiekiem(16, 'tak jest', context),
+                    przyciskZDzwiekiem(17, 'here we go', context),
+                    przyciskZDzwiekiem(18, 'soczysta buła', context),
                   ],
                 ),
               ],

@@ -1,6 +1,6 @@
 name: glina_soundboard
 description: Glina Soundboard &lt;3
-version: 1.2.0+1.2.0
+version: 1.2.3+1.2.3
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
@@ -45,3 +45,5 @@ flutter:
     - zasoby/audio/przyciski/nie_bawie_sie_tak.mp3
     - zasoby/audio/przyciski/kormoran.mp3
     - zasoby/audio/przyciski/tak_jest.mp3
+    - zasoby/audio/przyciski/here_we_go.mp3
+    - zasoby/audio/przyciski/soczysta_bula.mp3

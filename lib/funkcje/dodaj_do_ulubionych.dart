@@ -19,7 +19,6 @@ void usunListy() async {
 	SharedPreferences sp = await SharedPreferences.getInstance();
 	sp.remove(kluczNumery);
 	sp.remove(kluczOpisy);
-
 }
 
 Future<List<String>> odczytajListeNumery() async {

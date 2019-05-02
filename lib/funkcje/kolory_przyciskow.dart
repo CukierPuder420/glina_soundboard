@@ -4,6 +4,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 Paleta paleta;
+int indeksKoloru = 0;
 
 class HexColor extends Color {
 	static int _getColorFromHex(String hexColor) {
@@ -57,5 +58,3 @@ List<Color> koloryPrzyciskow = [
 	HexColor('ff99cc'),
 	HexColor('ffbbee'),
 ];
-
-int indeksKoloru = 0;
