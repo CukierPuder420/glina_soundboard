@@ -10,16 +10,16 @@ class SplashScreen extends StatefulWidget {
   _SplashScreenState createState() => _SplashScreenState();
 }
 
-  /// KOLEJNOŚĆ AKCJI:
-  ///  * ustalenie długości listy ulubionych
-  ///  * odczytanie listy numerów ulubionych z shared_preferences, parsowanie na inty i wczytanie do RAMu
-  ///  * odczytanie listy opisów ulubionych z shared_preferences i wczytanie do RAMu
-  ///  * pobranie palety kolorów z sieci przez API colormind.io
-  ///  * zastąpienie domyślnej (różowej) palety kolorami z colormind.io
-  ///  * odczytanie ilości dni z shared_preferences i wczytanie do RAMu
-  ///  * odczytanie daty ostatniego zapisu dni z shared_preferences, parsowanie i wczytanie do RAMu
-  ///  * sprawdzenie, czy należy usunąć dni
-  ///  * skok do EkranGlownyState()
+/// KOLEJNOŚĆ AKCJI:
+///  * ustalenie długości listy ulubionych
+///  * odczytanie listy numerów ulubionych z shared_preferences, parsowanie na inty i wczytanie do RAMu
+///  * odczytanie listy opisów ulubionych z shared_preferences i wczytanie do RAMu
+///  * pobranie palety kolorów z sieci przez API colormind.io
+///  * zastąpienie domyślnej (różowej) palety kolorami z colormind.io
+///  * odczytanie ilości dni z shared_preferences i wczytanie do RAMu
+///  * odczytanie daty ostatniego zapisu dni z shared_preferences, parsowanie i wczytanie do RAMu
+///  * sprawdzenie, czy należy usunąć dni
+///  * skok do EkranGlownyState()
 
 class _SplashScreenState extends State<SplashScreen> {
   @override
