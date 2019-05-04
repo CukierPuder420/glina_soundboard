@@ -27,21 +27,21 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     iloscUlubionych().then((_dlugoscListy) {
       dlugoscListy = _dlugoscListy;
-    }).then((dump) async {
+    }).then((_) async {
       ulubioneInty = await odczytajListeInty();
-    }).then((dump) async {
+    }).then((_) async {
       ulubioneOpisy = await odczytajListeOpisy();
-    }).then((dump) async {
+    }).then((_) async {
       paleta = await pobierzPalete();
-    }).then((dump) {
+    }).then((_) {
       koloryPrzyciskow = paleta.doListyRGB();
-    }).then((dump) async {
+    }).then((_) async {
       iloscDni = await odczytajDni();
-    }).then((dump) async {
+    }).then((_) async {
       wczoraj = await odczytajDate();
-    }).then((dump) {
+    }).then((_) {
       usunDni();
-    }).then((dump) {
+    }).then((_) {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
             builder: (BuildContext context) => EkranGlownyState()),
