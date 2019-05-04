@@ -1,6 +1,6 @@
 name: glina_soundboard
 description: Glina Soundboard &lt;3
-version: 1.2.4+1.2.4
+version: 1.2.5+1.2.5
 
 environment:
   sdk: ">=2.1.0 <3.0.0"

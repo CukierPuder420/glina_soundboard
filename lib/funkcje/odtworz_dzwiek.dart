@@ -83,13 +83,13 @@ void odtworzDzwiek(int idDzwieku) async {
       nazwaDzwieku = 'soczysta_bula';
       break;
     case 19:
-      nazwaDzwieku = 'pierwsza runda';
+      nazwaDzwieku = 'pierwsza_runda';
       break;
     case 20:
-      nazwaDzwieku = 'ale dostałem bułę';
+      nazwaDzwieku = 'ale_dostalem_bule';
       break;
     case 21:
-      nazwaDzwieku = 'karniak w stópkę';
+      nazwaDzwieku = 'karniak_w_stopke';
       break;
   }
 
