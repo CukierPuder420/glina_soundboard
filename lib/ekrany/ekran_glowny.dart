@@ -5,7 +5,6 @@ import 'package:glina_soundboard/funkcje/przycisk_z_dzwiekiem.dart';
 import 'package:glina_soundboard/ekrany/ulubione.dart';
 import 'package:glina_soundboard/funkcje/dni.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import 'package:glina_soundboard/funkcje/dodaj_do_ulubionych.dart';
 
 class EkranGlownyState extends StatefulWidget {
   @override

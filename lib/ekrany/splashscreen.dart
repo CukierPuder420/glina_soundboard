@@ -11,7 +11,6 @@ class SplashScreen extends StatefulWidget {
 }
 
 /// KOLEJNOŚĆ AKCJI:
-///  * ustalenie długości listy ulubionych
 ///  * odczytanie listy numerów ulubionych z shared_preferences, parsowanie na inty i wczytanie do RAMu
 ///  * odczytanie listy opisów ulubionych z shared_preferences i wczytanie do RAMu
 ///  * pobranie palety kolorów z sieci przez API colormind.io
@@ -19,29 +18,40 @@ class SplashScreen extends StatefulWidget {
 ///  * odczytanie ilości dni z shared_preferences i wczytanie do RAMu
 ///  * odczytanie daty ostatniego zapisu dni z shared_preferences, parsowanie i wczytanie do RAMu
 ///  * sprawdzenie, czy należy usunąć dni
+///  * ustalenie długości listy ulubionych
 ///  * skok do EkranGlownyState()
 
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    odczytajListeInty().then((_inty){
+    
+    odczytajListeInty()
+    .then((_inty){
       ulubioneInty = _inty;
-    }).then((_) async {
+    })
+    .then((_) async {
       ulubioneOpisy = await odczytajListeOpisy();
-    }).then((_) async {
+    })
+    .then((_) async {
       paleta = await pobierzPalete();
-    }).then((_) {
+    })
+    .then((_) {
       koloryPrzyciskow = paleta.doListyRGB();
-    }).then((_) async {
+    })
+    .then((_) async {
       iloscDni = await odczytajDni();
-    }).then((_) async {
+    })
+    .then((_) async {
       wczoraj = await odczytajDate();
-    }).then((_) {
+    })
+    .then((_) {
       usunDni();
-    }).then((_){
+    })
+    .then((_) {
     dlugoscListy = iloscUlubionych();
-    }).then((_) {
+    })
+    .then((_) {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
             builder: (BuildContext context) => EkranGlownyState()),

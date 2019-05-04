@@ -7,8 +7,7 @@ List<int> ulubioneInty = List();
 List<String> ulubioneOpisy = List();
 int dlugoscListy;
 
-void zapiszListe(
-    List<String> ulubioneNumery, List<String> ulubioneOpisy) async {
+void zapiszListe(List<String> ulubioneNumery, List<String> ulubioneOpisy) async {
   SharedPreferences sp = await SharedPreferences.getInstance();
   sp.setStringList(kluczNumery, ulubioneNumery);
   sp.setStringList(kluczOpisy, ulubioneOpisy);
@@ -41,15 +40,15 @@ Future<List<String>> odczytajListeOpisy() async {
 Future<List<int>> odczytajListeInty() async {
   List<String> stringi = await odczytajListeNumery();
   List<int> inty = List();
-  for (int i = 0; i < stringi.length; i++) {
-    inty.add(int.parse(stringi[i]));
+  for (String i in stringi) {
+    inty.add(int.parse(i));
   }
   return inty;
 }
 
 List<String> intyNaStringi(List<int> inty) {
   List<String> stringi = List();
-  for(int i in inty) {
+  for (int i in inty) {
     stringi.add(i.toString());
   }
   return stringi;

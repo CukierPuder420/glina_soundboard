@@ -3,7 +3,6 @@ import 'package:glina_soundboard/ekrany/splashscreen.dart';
 import 'package:flutter/services.dart';
 
 /// czeka, aż orientacja ekranu zablokuje się w pionie i wyświetla GlinaSoundboard()
-
 void main() {
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
