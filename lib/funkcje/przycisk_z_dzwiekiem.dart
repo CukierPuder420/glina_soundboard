@@ -14,11 +14,8 @@ GestureDetector przyciskZDzwiekiem(int idDzwieku, var opis, BuildContext context
 	Color _kolor = koloryPrzyciskow[indeksKoloru];
 	return new GestureDetector(
 		onLongPress: (){
-      czyGotowe = false;
-			dodajDoUlubionych(idDzwieku, opis).then((_prawda){
-        czyGotowe = _prawda;
-      });
-			final snackBar = SnackBar(
+			dodajDoUlubionych(idDzwieku, opis);
+			final SnackBar snackBar = SnackBar(
 				content: Text('Dodano do ulubionych ❤'),
 				duration: Duration(seconds: 2),
 			);
