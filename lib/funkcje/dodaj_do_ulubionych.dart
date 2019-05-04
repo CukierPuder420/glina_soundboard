@@ -1,13 +1,11 @@
 import 'dart:core';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:flutter/foundation.dart';
 
 const String kluczNumery = 'glinasoundboard_ulubione_numery';
 const String kluczOpisy = 'glinasoundboard_ulubione_opisy';
 List<int> ulubioneInty = List();
 List<String> ulubioneOpisy = List();
 int dlugoscListy;
-bool czyGotowe = true;
 
 void zapiszListe(
     List<String> ulubioneNumery, List<String> ulubioneOpisy) async {
@@ -49,51 +47,33 @@ Future<List<int>> odczytajListeInty() async {
   return inty;
 }
 
-Future<int> iloscUlubionych() async {
-  var inty = await odczytajListeNumery();
-  return inty.length;
+List<String> intyNaStringi(List<int> inty) {
+  List<String> stringi = List();
+  for(int i in inty) {
+    stringi.add(i.toString());
+  }
+  return stringi;
 }
 
-Future<bool> dodajDoUlubionych(int idDzwieku, String opisDzwieku) async {
-  czyGotowe = false;
-  List<String> ulubioneNumery = await odczytajListeNumery();
-  List<String> ulubioneOpisy = await odczytajListeOpisy();
-  ulubioneNumery.add('$idDzwieku');
+int iloscUlubionych() => ulubioneInty.length;
+
+void dodajDoUlubionych(int idDzwieku, String opisDzwieku) async {
+  ulubioneInty.add(idDzwieku);
   ulubioneOpisy.add(opisDzwieku);
+  dlugoscListy = iloscUlubionych();
 
-  var bufor = ulubioneNumery.toSet();
-  ulubioneNumery = bufor.toList();
-  bufor = ulubioneOpisy.toSet();
-  ulubioneOpisy = bufor.toList();
+  /// usuwanie duplikatów
+  var bufor1 = ulubioneInty.toSet();
+  ulubioneInty = bufor1.toList();
+  var bufor2 = ulubioneOpisy.toSet();
+  ulubioneOpisy = bufor2.toList();
 
-  zapiszListe(ulubioneNumery, ulubioneOpisy);
-
-  if (!kReleaseMode) {
-    print('Lista indeksów ulubionnych: ${await odczytajListeInty()}');
-    print('Lista opisów ulubionych: ${await odczytajListeOpisy()}');
-  }
-
-  ulubioneInty = await odczytajListeInty();
-  dlugoscListy = await iloscUlubionych();
-
-  odczytajListeInty().then((lista) {
-    ulubioneInty = lista;
-  }).then((_) async {
-    dlugoscListy = await iloscUlubionych();
-  }).then((_){
-    czyGotowe = true;
-  });
-  
-  return true;
+  zapiszListe(intyNaStringi(ulubioneInty), ulubioneOpisy);
 }
 
 void usunZUlubionych(int idDzwieku, String opisDzwieku) async {
-  var numery = await odczytajListeNumery();
-  var opisy = await odczytajListeOpisy();
-  numery.remove('$idDzwieku');
-  opisy.remove(opisDzwieku);
-  zapiszListe(numery, opisy);
-  ulubioneInty = await odczytajListeInty();
-  ulubioneOpisy = await odczytajListeOpisy();
-  dlugoscListy = await iloscUlubionych();
+  ulubioneInty.remove(idDzwieku);
+  ulubioneOpisy.remove(opisDzwieku);
+  dlugoscListy = iloscUlubionych();
+  zapiszListe(intyNaStringi(ulubioneInty), ulubioneOpisy);
 }

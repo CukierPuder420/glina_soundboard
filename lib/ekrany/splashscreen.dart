@@ -25,10 +25,8 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    iloscUlubionych().then((_dlugoscListy) {
-      dlugoscListy = _dlugoscListy;
-    }).then((_) async {
-      ulubioneInty = await odczytajListeInty();
+    odczytajListeInty().then((_inty){
+      ulubioneInty = _inty;
     }).then((_) async {
       ulubioneOpisy = await odczytajListeOpisy();
     }).then((_) async {
@@ -41,6 +39,8 @@ class _SplashScreenState extends State<SplashScreen> {
       wczoraj = await odczytajDate();
     }).then((_) {
       usunDni();
+    }).then((_){
+    dlugoscListy = iloscUlubionych();
     }).then((_) {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(

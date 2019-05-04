@@ -64,18 +64,10 @@ class _EkranGlownyState extends State<EkranGlownyState> {
                         color: Colors.amber,
                       ),
                       onPressed: () {
-                        if (czyGotowe) {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => Ulubione()),
-                          );
-                        } else {
-                          final snackBar = SnackBar(
-                            content: Text('Zaczekaj chwilkę...'),
-                            duration: Duration(seconds: 1),
-                          );
-                          Scaffold.of(context).showSnackBar(snackBar);
-                        }
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Ulubione()),
+                        );
                       },
                     ),
                   ],
