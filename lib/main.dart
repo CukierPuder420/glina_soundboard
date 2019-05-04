@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:glina_soundboard/ekrany/splashscreen.dart';
+import 'package:flutter/services.dart';
 
-void main() => runApp(GlinaSoundboard());
+void main() {
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
+  runApp(GlinaSoundboard());
+}
 
 class GlinaSoundboard extends StatelessWidget {
 	@override

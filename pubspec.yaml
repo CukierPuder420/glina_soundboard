@@ -25,4 +25,25 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - zasoby/
+    - zasoby/zdjecia/icon.png
+    - zasoby/zdjecia/morze.jpg
+    - zasoby/zdjecia/siedzacy.jpg
+    - zasoby/audio/przyciski/AAAAA_kurwa.mp3
+    - zasoby/audio/przyciski/lalloueciak_napleciak.mp3
+    - zasoby/audio/przyciski/strasznie_glupio.mp3
+    - zasoby/audio/major.mp3
+    - zasoby/audio/przyciski/jek.mp3
+    - zasoby/audio/AAAARRRR.mp3
+    - zasoby/audio/przyciski/ahh_jest.mp3
+    - zasoby/audio/przyciski/jebaniutki.mp3
+    - zasoby/audio/przyciski/wooolny_jestem.mp3
+    - zasoby/audio/przyciski/AAA_szkoda.mp3
+    - zasoby/audio/przyciski/ajj_nieprzyjemnie.mp3
+    - zasoby/audio/przyciski/famas.mp3
+    - zasoby/audio/przyciski/famas_2.mp3
+    - zasoby/audio/przyciski/niee.mp3
+    - zasoby/audio/przyciski/nie_bawie_sie_tak.mp3
+    - zasoby/audio/przyciski/kormoran.mp3
+    - zasoby/audio/przyciski/tak_jest.mp3
+    - zasoby/audio/przyciski/here_we_go.mp3
+    - zasoby/audio/przyciski/soczysta_bula.mp3
