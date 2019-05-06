@@ -22,7 +22,6 @@ Future<Paleta> pobierzPalete() async {
 	final odpowiedz = await http.post('http://colormind.io/api/', body: '{"model":"default"}');
 
 	if (odpowiedz.statusCode == 200) {
-		print('Udało się pobrać paletę kolorów <3');
 		return Paleta.fromJson(json.decode(odpowiedz.body));
 	} else {
 		throw Exception('Nie udało się pobrać kolorów');
@@ -40,6 +39,20 @@ class Paleta {
 		);
 	}
 
+  bool _czyCiemny(Color kolor) {
+  String string = kolor.toString();
+  string = string.substring(10, 16); //Color(0x12345678) do 012345
+  final int r = int.parse(string.substring(0, 2), radix: 16);
+  final int g = int.parse(string.substring(2, 4), radix: 16);
+  final int b = int.parse(string.substring(4, 6), radix: 16);
+  final double luminacja = 0.2126 * r + 0.7152 * g + 0.0722 * b;
+  if(luminacja < 80) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
 	List<Color> doListyRGB() {
 		List<Color> lista = List();
 		lista.add(Color.fromARGB(255, paleta[0][0], paleta[0][1], paleta[0][2]));
@@ -49,6 +62,13 @@ class Paleta {
 		lista.add(Color.fromARGB(255, paleta[4][0], paleta[4][1], paleta[4][2]));
 		return lista;
 	}
+
+  List<bool> jasnoscKolorow() {
+    List<bool> jasnosci = List();
+    for(Color i in koloryPrzyciskow) {
+      jasnosci.add(_czyCiemny(i));
+    }
+  }
 }
 
 List<Color> koloryPrzyciskow = [
