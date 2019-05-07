@@ -5,6 +5,8 @@ import 'package:glina_soundboard/funkcje/dodaj_do_ulubionych.dart';
 import 'package:glina_soundboard/funkcje/kolory_przyciskow.dart';
 import 'package:glina_soundboard/funkcje/dni.dart';
 
+const int _progLuminacji = 128; //min: 0, max: 255
+
 GestureDetector przyciskZDzwiekiem(
     int idDzwieku, String opis, BuildContext context) {
   if (indeksKoloru + 1 == koloryPrzyciskow.length) {
@@ -16,12 +18,12 @@ GestureDetector przyciskZDzwiekiem(
 
   bool _czyCiemny(Color kolor) {
     String string = kolor.toString();
-    string = string.substring(10, 16); //Color(0xffffffff) do ffffff
+    string = string.substring(10, 16); ///Color(0xffffffff) do ffffff
     final int r = int.parse(string.substring(0, 2), radix: 16);
     final int g = int.parse(string.substring(2, 4), radix: 16);
     final int b = int.parse(string.substring(4, 6), radix: 16);
     final double luminacja = 0.2126 * r + 0.7152 * g + 0.0722 * b;
-    if (luminacja < 80) {
+    if (luminacja < _progLuminacji) {
       return true;
     } else {
       return false;

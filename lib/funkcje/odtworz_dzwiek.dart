@@ -91,6 +91,12 @@ void odtworzDzwiek(int idDzwieku) async {
     case 21:
       nazwaDzwieku = 'karniak_w_stopke';
       break;
+    case 22:
+      nazwaDzwieku = 'glupio_agresywnie';
+      break;
+    case 23:
+      nazwaDzwieku = 'ale_zepsulem';
+      break;
   }
 
   int soundId = await rootBundle

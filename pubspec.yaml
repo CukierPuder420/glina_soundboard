@@ -1,6 +1,6 @@
 name: glina_soundboard
 description: Glina Soundboard &lt;3
-version: 1.2.5+1.2.5
+version: 1.2.6+1.2.6
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
@@ -50,3 +50,5 @@ flutter:
     - zasoby/audio/przyciski/pierwsza_runda.mp3
     - zasoby/audio/przyciski/ale_dostalem_bule.mp3
     - zasoby/audio/przyciski/karniak_w_stopke.mp3
+    - zasoby/audio/przyciski/glupio_agresywnie.mp3
+    - zasoby/audio/przyciski/ale_zepsulem.mp3
