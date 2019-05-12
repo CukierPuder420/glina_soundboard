@@ -17,25 +17,10 @@ dependencies:
   flutter_slidable: ^0.4.9
   http: ^0.12.0+2
   material_design_icons_flutter: 3.2.3595
-  flutter_web: any
-  flutter_web_ui: any
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  build_runner: ^1.4.0
-  build_web_compilers: ^2.0.0
-  pedantic: ^1.0.0
-
-dependency_overrides:
-  flutter_web:
-    git:
-      url: https://github.com/flutter/flutter_web
-      path: packages/flutter_web
-  flutter_web_ui:
-    git:
-      url: https://github.com/flutter/flutter_web
-      path: packages/flutter_web_ui
 
 flutter:
   uses-material-design: true
