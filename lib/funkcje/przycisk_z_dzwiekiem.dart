@@ -5,7 +5,8 @@ import 'package:glina_soundboard/funkcje/dodaj_do_ulubionych.dart';
 import 'package:glina_soundboard/funkcje/kolory_przyciskow.dart';
 import 'package:glina_soundboard/funkcje/dni.dart';
 
-const int _progLuminacji = 128; //min: 0, max: 255
+///min: 0, max: 255
+const int _progLuminacji = 128;
 
 GestureDetector przyciskZDzwiekiem(
     int idDzwieku, String opis, BuildContext context) {
