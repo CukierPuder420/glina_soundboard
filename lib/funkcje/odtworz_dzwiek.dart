@@ -109,6 +109,9 @@ void odtworzDzwiek(int idDzwieku) async {
     case 27:
       nazwaDzwieku = 'raszing';
       break;
+    case 28:
+      nazwaDzwieku = 'jak_dzik_w_zoledzie';
+      break;
   }
 
   int soundId = await rootBundle

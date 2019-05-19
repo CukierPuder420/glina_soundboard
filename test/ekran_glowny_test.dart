@@ -4,13 +4,13 @@ import 'package:glina_soundboard/ekrany/splashscreen.dart';
 
 void main() {
 
-  Widget _SplashScreen() {
+  Widget _splashScreen() {
     return MaterialApp(
       home: SplashScreen(),
     );
   }
   testWidgets('SplashScreen ma tytuł', (WidgetTester tester) async {
-    await tester.pumpWidget(_SplashScreen());
+    await tester.pumpWidget(_splashScreen());
 
     final tytul = find.text('Glina Soundboard');
 
