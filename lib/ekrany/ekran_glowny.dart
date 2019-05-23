@@ -65,9 +65,10 @@ class _EkranGlownyState extends State<EkranGlownyState> {
                       ),
                       onPressed: () {
                         Navigator.push(
-                          context,
-                          PageTransition(child: Ulubione(), type: PageTransitionType.downToUp)
-                        );
+                            context,
+                            PageTransition(
+                                child: Ulubione(),
+                                type: PageTransitionType.rotate));
                       },
                     ),
                   ],

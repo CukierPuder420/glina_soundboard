@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:glina_soundboard/ekrany/ekran_glowny.dart';
 import 'package:glina_soundboard/funkcje/dodaj_do_ulubionych.dart';
@@ -26,37 +27,28 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    
-    odczytajListeInty()
-    .then((_inty){
+
+    odczytajListeInty().then((_inty) {
       ulubioneInty = _inty;
-    })
-    .then((_) async {
+    }).then((_) async {
       ulubioneOpisy = await odczytajListeOpisy();
-    })
-    .then((_) async {
+    }).then((_) async {
       paleta = await pobierzPalete();
-    })
-    .then((_) {
+    }).then((_) {
       koloryPrzyciskow = paleta.doListyRGB();
-    })
-    .then((_) async {
+    }).then((_) async {
       iloscDni = await odczytajDni();
-    })
-    .then((_) async {
+    }).then((_) async {
       wczoraj = await odczytajDate();
-    })
-    .then((_) {
+    }).then((_) {
       usunDni();
-    })
-    .then((_) {
-    dlugoscListy = iloscUlubionych();
-    })
-    .then((_) {
+    }).then((_) {
+      dlugoscListy = iloscUlubionych();
+    }).then((_) {
       Navigator.pushReplacement(
-        context,
-        PageTransition(type: PageTransitionType.downToUp, child: EkranGlownyState())
-      );
+          context,
+          PageTransition(
+              type: PageTransitionType.rotate, child: EkranGlownyState()));
     });
   }
 
