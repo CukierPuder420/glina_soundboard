@@ -5,6 +5,7 @@ import 'package:glina_soundboard/funkcje/przycisk_z_dzwiekiem.dart';
 import 'package:glina_soundboard/ekrany/ulubione.dart';
 import 'package:glina_soundboard/funkcje/dni.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:page_transition/page_transition.dart';
 
 class EkranGlownyState extends StatefulWidget {
   @override
@@ -65,7 +66,7 @@ class _EkranGlownyState extends State<EkranGlownyState> {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => Ulubione()),
+                          PageTransition(child: Ulubione(), type: PageTransitionType.downToUp)
                         );
                       },
                     ),

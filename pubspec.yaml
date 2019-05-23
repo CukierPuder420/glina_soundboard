@@ -17,6 +17,7 @@ dependencies:
   flutter_slidable: ^0.4.9
   http: ^0.12.0+2
   material_design_icons_flutter: 3.2.3595
+  page_transition: ^1.1.0
 
 dev_dependencies:
   flutter_test:

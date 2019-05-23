@@ -4,6 +4,7 @@ import 'package:glina_soundboard/funkcje/dodaj_do_ulubionych.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:glina_soundboard/funkcje/kolory_przyciskow.dart';
 import 'package:glina_soundboard/funkcje/dni.dart';
+import 'package:page_transition/page_transition.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -52,9 +53,9 @@ class _SplashScreenState extends State<SplashScreen> {
     dlugoscListy = iloscUlubionych();
     })
     .then((_) {
-      Navigator.of(context).pushReplacement(
-        MaterialPageRoute(
-            builder: (BuildContext context) => EkranGlownyState()),
+      Navigator.pushReplacement(
+        context,
+        PageTransition(type: PageTransitionType.downToUp, child: EkranGlownyState())
       );
     });
   }
