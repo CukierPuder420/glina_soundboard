@@ -68,7 +68,8 @@ class _EkranGlownyState extends State<EkranGlownyState> {
                             context,
                             PageTransition(
                                 child: Ulubione(),
-                                type: PageTransitionType.rotate));
+                                type: PageTransitionType.upToDown,
+                                duration: Duration(milliseconds: 300)));
                       },
                     ),
                   ],

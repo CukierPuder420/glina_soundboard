@@ -48,7 +48,9 @@ class _SplashScreenState extends State<SplashScreen> {
       Navigator.pushReplacement(
           context,
           PageTransition(
-              type: PageTransitionType.rotate, child: EkranGlownyState()));
+              type: PageTransitionType.downToUp,
+              child: EkranGlownyState(),
+              duration: Duration(milliseconds: 500)));
     });
   }
 
