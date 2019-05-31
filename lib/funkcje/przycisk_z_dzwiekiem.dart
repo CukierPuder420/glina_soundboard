@@ -19,7 +19,8 @@ GestureDetector przyciskZDzwiekiem(
 
   bool _czyCiemny(Color kolor) {
     String string = kolor.toString();
-    string = string.substring(10, 16); ///Color(0xffffffff) do ffffff
+    ///Color(0xffffffff) do ffffff
+    string = string.substring(10, 16);
     final int r = int.parse(string.substring(0, 2), radix: 16);
     final int g = int.parse(string.substring(2, 4), radix: 16);
     final int b = int.parse(string.substring(4, 6), radix: 16);
@@ -52,7 +53,7 @@ GestureDetector przyciskZDzwiekiem(
           textAlign: TextAlign.center,
           maxLines: 2,
           style: TextStyle(
-            fontSize: 13,
+            fontSize: 12,
             color: _czyCiemny(_kolor) ? Colors.white : Colors.black,
           ),
           minFontSize: 6,
