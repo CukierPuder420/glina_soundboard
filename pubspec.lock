@@ -150,7 +150,7 @@ packages:
       name: shared_preferences
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.5.2+1"
+    version: "0.5.2+2"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -162,7 +162,7 @@ packages:
       name: soundpool
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.5.1"
+    version: "0.5.2"
   source_span:
     dependency: transitive
     description:
