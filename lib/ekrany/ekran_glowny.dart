@@ -107,6 +107,8 @@ class _EkranGlownyState extends State<EkranGlownyState> {
                     przyciskZDzwiekiem(29, 'parostatek', context),
                     przyciskZDzwiekiem(30, 'fak ju no', context),
                     przyciskZDzwiekiem(31, 'orgazm', context),
+                    przyciskZDzwiekiem(32, 'spokojnie', context),
+                    przyciskZDzwiekiem(33, 'aż się spociłem', context),
                   ],
                 ),
               ],

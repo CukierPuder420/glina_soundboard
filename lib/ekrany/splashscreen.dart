@@ -14,7 +14,7 @@ class SplashScreen extends StatefulWidget {
 /// KOLEJNOŚĆ AKCJI:
 ///  * odczytanie listy numerów ulubionych z shared_preferences, parsowanie na inty i wczytanie do RAMu
 ///  * odczytanie listy opisów ulubionych z shared_preferences i wczytanie do RAMu
-///  * pobranie palety kolorów z sieci przez API colormind.io
+///  * pobranie palety kolorów z sieci przez API colormind.io (timeout - 2 sekundy)
 ///  * zastąpienie domyślnej (różowej) palety kolorami z colormind.io
 ///  * odczytanie ilości dni z shared_preferences i wczytanie do RAMu
 ///  * odczytanie daty ostatniego zapisu dni z shared_preferences, parsowanie i wczytanie do RAMu
@@ -27,30 +27,41 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
 
-    odczytajListeInty().then((_inty) {
-      ulubioneInty = _inty;
-    }).then((_) async {
-      ulubioneOpisy = await odczytajListeOpisy();
-    }).then((_) async {
-      paleta = await pobierzPalete();
-    }).then((_) {
-      koloryPrzyciskow = paleta.doListyRGB();
-    }).then((_) async {
-      iloscDni = await odczytajDni();
-    }).then((_) async {
-      wczoraj = await odczytajDate();
-    }).then((_) {
-      usunDni();
-    }).then((_) {
-      dlugoscListy = iloscUlubionych();
-    }).then((_) {
-      Navigator.pushReplacement(
-          context,
-          PageTransition(
-              type: PageTransitionType.downToUp,
-              child: EkranGlownyState(),
-              duration: Duration(milliseconds: 500)));
-    });
+    odczytajListeInty()
+        .then((_inty) {
+          ulubioneInty = _inty;
+        })
+        .then((_) async {
+          ulubioneOpisy = await odczytajListeOpisy();
+        })
+        .then((_) async {
+          paleta = await pobierzPalete();
+        })
+        .timeout(Duration(seconds: 2))
+        .catchError(print)
+        .then((_) {
+          koloryPrzyciskow = paleta.doListyRGB();
+        })
+        .then((_) async {
+          iloscDni = await odczytajDni();
+        })
+        .then((_) async {
+          wczoraj = await odczytajDate();
+        })
+        .then((_) {
+          usunDni();
+        })
+        .then((_) {
+          dlugoscListy = iloscUlubionych();
+        })
+        .then((_) {
+          Navigator.pushReplacement(
+              context,
+              PageTransition(
+                  type: PageTransitionType.downToUp,
+                  child: EkranGlownyState(),
+                  duration: Duration(milliseconds: 500)));
+        });
   }
 
   @override
