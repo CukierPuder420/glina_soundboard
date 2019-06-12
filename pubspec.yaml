@@ -1,6 +1,6 @@
 name: glina_soundboard
 description: Glina Soundboard &lt;3
-version: 1.3.0+1.3.0
+version: 1.3.1
 
 environment:
   sdk: '>=2.3.0-dev.0.1 <3.0.0'
@@ -58,8 +58,17 @@ flutter:
     - zasoby/audio/przyciski/dmg.mp3
     - zasoby/audio/przyciski/raszing.mp3
     - zasoby/audio/przyciski/jak_dzik_w_zoledzie.mp3
-    - zasoby/audio/przyciski/parostatek.mp3
+    - zasoby/audio/przyciski/parostatek1.mp3
     - zasoby/audio/przyciski/fak_ju_no.mp3
     - zasoby/audio/przyciski/orgazm.mp3
     - zasoby/audio/przyciski/spokojnie.mp3
     - zasoby/audio/przyciski/az_sie_spocilem.mp3
+    - zasoby/audio/przyciski/parostatek2.mp3
+    - zasoby/audio/przyciski/nie_tuptaj.mp3
+    - zasoby/audio/przyciski/popus_graj.mp3
+    - zasoby/audio/przyciski/patrzcie_ziemniora.mp3
+    - zasoby/audio/przyciski/pestkownia.mp3
+    - zasoby/audio/przyciski/tuptuptup.mp3
+    - zasoby/audio/przyciski/groszek_ty_cwelu.mp3
+    - zasoby/audio/przyciski/ale_kichne.mp3
+    - zasoby/audio/przyciski/tylko_gesiego.mp3

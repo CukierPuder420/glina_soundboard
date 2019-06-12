@@ -113,7 +113,7 @@ void odtworzDzwiek(int idDzwieku) async {
       nazwaDzwieku = 'jak_dzik_w_zoledzie';
       break;
     case 29:
-      nazwaDzwieku = 'parostatek';
+      nazwaDzwieku = 'parostatek1';
       break;
     case 30:
       nazwaDzwieku = 'fak_ju_no';
@@ -126,6 +126,33 @@ void odtworzDzwiek(int idDzwieku) async {
       break;
     case 33:
       nazwaDzwieku = 'az_sie_spocilem';
+      break;
+    case 34:
+      nazwaDzwieku = 'parostatek2';
+      break;
+    case 35:
+      nazwaDzwieku = 'nie_tuptaj';
+      break;
+    case 36:
+      nazwaDzwieku = 'popus_graj';
+      break;
+    case 37:
+      nazwaDzwieku = 'patrzcie_ziemniora';
+      break;
+    case 38:
+      nazwaDzwieku = 'pestkownia';
+      break;
+    case 39:
+      nazwaDzwieku = 'tuptuptup';
+      break;
+    case 40:
+      nazwaDzwieku = 'groszek_ty_cwelu';
+      break;
+    case 41:
+      nazwaDzwieku = 'ale_kichne';
+      break;
+    case 42:
+      nazwaDzwieku = 'tylko_gesiego';
       break;
   }
 
