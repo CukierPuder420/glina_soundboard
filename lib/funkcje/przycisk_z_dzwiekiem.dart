@@ -19,6 +19,7 @@ GestureDetector przyciskZDzwiekiem(
 
   bool _czyCiemny(Color kolor) {
     String string = kolor.toString();
+
     ///Color(0xffffffff) do ffffff
     string = string.substring(10, 16);
     final int r = int.parse(string.substring(0, 2), radix: 16);
