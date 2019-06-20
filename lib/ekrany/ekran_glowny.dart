@@ -36,7 +36,7 @@ class _EkranGlownyState extends State<EkranGlownyState> {
                   floating: true,
                   pinned: true,
                   flexibleSpace: FlexibleSpaceBar(
-                    background: Image.asset('zasoby/zdjecia/morze.jpg',
+                    background: Image.asset('assets/zdjecia/morze.jpg',
                         fit: BoxFit.cover),
                   ),
                   actions: <Widget>[
@@ -121,11 +121,10 @@ class _EkranGlownyState extends State<EkranGlownyState> {
                     PrzyciskZDzwiekiem(43, 'gdzie jest'),
                     PrzyciskZDzwiekiem(44, 'nowotwór'),
                     PrzyciskZDzwiekiem(45, 'mać'),
-                    PrzyciskZDzwiekiem(46, 'huhu'),
                     PrzyciskZDzwiekiem(47, 'BOT Ulryk'),
-                    //PrzyciskZDzwiekiem(48, '500-'),
+                    PrzyciskZDzwiekiem(48, '500-'),
                     PrzyciskZDzwiekiem(49, 'jak zwykle'),
-                    //PrzyciskZDzwiekiem(50, 'powstanie styczniowe'),
+                    PrzyciskZDzwiekiem(50, 'powstanie styczniowe'),
                   ],
                 ),
               ],

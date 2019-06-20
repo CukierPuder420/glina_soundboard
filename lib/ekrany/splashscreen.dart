@@ -70,7 +70,7 @@ class _SplashScreenState extends State<SplashScreen> {
       body: Stack(
         children: <Widget>[
           Image.asset(
-            'zasoby/zdjecia/siedzacy.jpg',
+            'assets/zdjecia/siedzacy.jpg',
             fit: BoxFit.cover,
             height: double.infinity,
             width: double.infinity,

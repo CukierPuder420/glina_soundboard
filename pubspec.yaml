@@ -1,6 +1,6 @@
 name: glina_soundboard
 description: Glina Soundboard &lt;3
-version: 1.3.2+1.3.2
+version: 1.3.3+1.3.3
 
 environment:
   sdk: '>=2.3.0-dev.0.1 <3.0.0'
@@ -9,7 +9,6 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^0.1.2
-  soundpool: ^0.5.1
   shake: ^0.1.0
   path_provider: ^0.5.0+1
   auto_size_text: ^1.1.2
@@ -18,6 +17,7 @@ dependencies:
   http: ^0.12.0+2
   material_design_icons_flutter: 3.2.3595
   page_transition: ^1.1.0
+  audioplayers: ^0.8.0
 
 dev_dependencies:
   flutter_test:
@@ -26,57 +26,59 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - zasoby/zdjecia/icon.png
-    - zasoby/zdjecia/morze.jpg
-    - zasoby/zdjecia/siedzacy.jpg
-    - zasoby/audio/przyciski/AAAAA_kurwa.mp3
-    - zasoby/audio/przyciski/lalloueciak_napleciak.mp3
-    - zasoby/audio/przyciski/strasznie_glupio.mp3
-    - zasoby/audio/major.mp3
-    - zasoby/audio/przyciski/jek.mp3
-    - zasoby/audio/AAAARRRR.mp3
-    - zasoby/audio/przyciski/ahh_jest.mp3
-    - zasoby/audio/przyciski/jebaniutki.mp3
-    - zasoby/audio/przyciski/wooolny_jestem.mp3
-    - zasoby/audio/przyciski/AAA_szkoda.mp3
-    - zasoby/audio/przyciski/ajj_nieprzyjemnie.mp3
-    - zasoby/audio/przyciski/famas.mp3
-    - zasoby/audio/przyciski/famas_2.mp3
-    - zasoby/audio/przyciski/niee.mp3
-    - zasoby/audio/przyciski/nie_bawie_sie_tak.mp3
-    - zasoby/audio/przyciski/kormoran.mp3
-    - zasoby/audio/przyciski/tak_jest.mp3
-    - zasoby/audio/przyciski/here_we_go.mp3
-    - zasoby/audio/przyciski/soczysta_bula.mp3
-    - zasoby/audio/przyciski/pierwsza_runda.mp3
-    - zasoby/audio/przyciski/ale_dostalem_bule.mp3
-    - zasoby/audio/przyciski/karniak_w_stopke.mp3
-    - zasoby/audio/przyciski/glupio_agresywnie.mp3
-    - zasoby/audio/przyciski/ale_zepsulem.mp3
-    - zasoby/audio/przyciski/big_time_frags.mp3
-    - zasoby/audio/przyciski/danke.mp3
-    - zasoby/audio/przyciski/dmg.mp3
-    - zasoby/audio/przyciski/raszing.mp3
-    - zasoby/audio/przyciski/jak_dzik_w_zoledzie.mp3
-    - zasoby/audio/przyciski/parostatek1.mp3
-    - zasoby/audio/przyciski/fak_ju_no.mp3
-    - zasoby/audio/przyciski/orgazm.mp3
-    - zasoby/audio/przyciski/spokojnie.mp3
-    - zasoby/audio/przyciski/az_sie_spocilem.mp3
-    - zasoby/audio/przyciski/parostatek2.mp3
-    - zasoby/audio/przyciski/nie_tuptaj.mp3
-    - zasoby/audio/przyciski/popus_graj.mp3
-    - zasoby/audio/przyciski/patrzcie_ziemniora.mp3
-    - zasoby/audio/przyciski/pestkownia.mp3
-    - zasoby/audio/przyciski/tuptuptup.mp3
-    - zasoby/audio/przyciski/groszek_ty_cwelu.mp3
-    - zasoby/audio/przyciski/ale_kichne.mp3
-    - zasoby/audio/przyciski/tylko_gesiego.mp3
-    - zasoby/audio/przyciski/gdzie_jest.mp3
-    - zasoby/audio/przyciski/nowotwor.mp3
-    - zasoby/audio/przyciski/mac.mp3
-    - zasoby/audio/przyciski/huhu.mp3
-    - zasoby/audio/przyciski/bot_ulryk.mp3
-    - zasoby/audio/przyciski/500-.mp3
-    - zasoby/audio/przyciski/jak_zwykle.mp3
-    - zasoby/audio/przyciski/powstanie_styczniowe.mp3
+    - assets/audio/alyly.mp3
+    - assets/audio/ahuhu.mp3
+    - assets/zdjecia/icon.png
+    - assets/zdjecia/morze.jpg
+    - assets/zdjecia/siedzacy.jpg
+    - assets/audio/przyciski/AAAAA_kurwa.mp3
+    - assets/audio/przyciski/lalloueciak_napleciak.mp3
+    - assets/audio/przyciski/strasznie_glupio.mp3
+    - assets/audio/major.mp3
+    - assets/audio/przyciski/jek.mp3
+    - assets/audio/AAAARRRR.mp3
+    - assets/audio/przyciski/ahh_jest.mp3
+    - assets/audio/przyciski/jebaniutki.mp3
+    - assets/audio/przyciski/wooolny_jestem.mp3
+    - assets/audio/przyciski/AAA_szkoda.mp3
+    - assets/audio/przyciski/ajj_nieprzyjemnie.mp3
+    - assets/audio/przyciski/famas.mp3
+    - assets/audio/przyciski/famas_2.mp3
+    - assets/audio/przyciski/niee.mp3
+    - assets/audio/przyciski/nie_bawie_sie_tak.mp3
+    - assets/audio/przyciski/kormoran.mp3
+    - assets/audio/przyciski/tak_jest.mp3
+    - assets/audio/przyciski/here_we_go.mp3
+    - assets/audio/przyciski/soczysta_bula.mp3
+    - assets/audio/przyciski/pierwsza_runda.mp3
+    - assets/audio/przyciski/ale_dostalem_bule.mp3
+    - assets/audio/przyciski/karniak_w_stopke.mp3
+    - assets/audio/przyciski/glupio_agresywnie.mp3
+    - assets/audio/przyciski/ale_zepsulem.mp3
+    - assets/audio/przyciski/big_time_frags.mp3
+    - assets/audio/przyciski/danke.mp3
+    - assets/audio/przyciski/dmg.mp3
+    - assets/audio/przyciski/raszing.mp3
+    - assets/audio/przyciski/jak_dzik_w_zoledzie.mp3
+    - assets/audio/przyciski/parostatek1.mp3
+    - assets/audio/przyciski/fak_ju_no.mp3
+    - assets/audio/przyciski/orgazm.mp3
+    - assets/audio/przyciski/spokojnie.mp3
+    - assets/audio/przyciski/az_sie_spocilem.mp3
+    - assets/audio/przyciski/parostatek2.mp3
+    - assets/audio/przyciski/nie_tuptaj.mp3
+    - assets/audio/przyciski/popus_graj.mp3
+    - assets/audio/przyciski/patrzcie_ziemniora.mp3
+    - assets/audio/przyciski/pestkownia.mp3
+    - assets/audio/przyciski/tuptuptup.mp3
+    - assets/audio/przyciski/groszek_ty_cwelu.mp3
+    - assets/audio/przyciski/ale_kichne.mp3
+    - assets/audio/przyciski/tylko_gesiego.mp3
+    - assets/audio/przyciski/gdzie_jest.mp3
+    - assets/audio/przyciski/nowotwor.mp3
+    - assets/audio/przyciski/mac.mp3
+    - assets/audio/przyciski/huhu.mp3
+    - assets/audio/przyciski/bot_ulryk.mp3
+    - assets/audio/przyciski/500-.mp3
+    - assets/audio/przyciski/jak_zwykle.mp3
+    - assets/audio/przyciski/powstanie_styczniowe.mp3

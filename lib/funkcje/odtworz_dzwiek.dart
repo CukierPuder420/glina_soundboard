@@ -1,33 +1,35 @@
-import 'package:soundpool/soundpool.dart';
-import 'package:flutter/services.dart';
+import 'dart:math';
+
+import 'package:audioplayers/audioplayers.dart';
+import 'package:audioplayers/audio_cache.dart';
+
+AudioPlayer audioPlayer = AudioPlayer();
+AudioCache audioCache = AudioCache();
+
+var randomizer = Random();
 
 void arrr() async {
-  Soundpool arrr = Soundpool(streamType: StreamType.music);
-  int _soundId = await rootBundle
-      .load('zasoby/audio/AAAARRRR.mp3')
-      .then((ByteData soundData) {
-    return arrr.load(soundData);
-  });
-  await arrr.play(_soundId);
+  int wybor = randomizer.nextInt(3);
+  switch (wybor) {
+    case 0:
+      await audioCache.play('audio/AAAARRRR.mp3');
+      break;
+    case 1:
+      await audioCache.play('audio/ahuhu.mp3');
+      break;
+    case 2:
+      await audioCache.play('audio/alyly.mp3');
+      break;
+  }
 }
 
 void major() async {
-  Soundpool major = Soundpool(streamType: StreamType.music);
-  int _soundId = await rootBundle
-      .load('zasoby/audio/major.mp3')
-      .then((ByteData soundData) {
-    return major.load(soundData);
-  });
-  await major.play(_soundId);
+  await audioCache.play('audio/major.mp3');
 }
 
 void odtworzDzwiek(int idDzwieku) async {
-  Soundpool dzwiek = Soundpool(streamType: StreamType.music);
   var nazwaDzwieku;
   switch (idDzwieku) {
-    case 0:
-      nazwaDzwieku = 'major';
-      break;
     case 1:
       nazwaDzwieku = 'AAAAA_kurwa';
       break;
@@ -163,9 +165,6 @@ void odtworzDzwiek(int idDzwieku) async {
     case 45:
       nazwaDzwieku = 'mac';
       break;
-    case 46:
-      nazwaDzwieku = 'huhu';
-      break;
     case 47:
       nazwaDzwieku = 'bot_ulryk';
       break;
@@ -180,10 +179,6 @@ void odtworzDzwiek(int idDzwieku) async {
       break;
   }
 
-  int soundId = await rootBundle
-      .load('zasoby/audio/przyciski/' + nazwaDzwieku + '.mp3')
-      .then((ByteData soundData) {
-    return dzwiek.load(soundData);
-  });
-  await dzwiek.play(soundId);
+  String sciezkaPliku = 'audio/przyciski/' + nazwaDzwieku + '.mp3';
+  await audioCache.play(sciezkaPliku);
 }
