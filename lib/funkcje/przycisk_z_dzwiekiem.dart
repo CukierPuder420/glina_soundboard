@@ -8,14 +8,30 @@ import 'package:glina_soundboard/funkcje/dni.dart';
 ///min: 0, max: 255
 const int _progLuminacji = 128;
 
-GestureDetector przyciskZDzwiekiem(
-    int idDzwieku, String opis, BuildContext context) {
-  if (indeksKoloru + 1 == koloryPrzyciskow.length) {
-    indeksKoloru = 0;
-  } else {
-    indeksKoloru++;
+class PrzyciskZDzwiekiem extends StatefulWidget {
+  PrzyciskZDzwiekiem(this.idDzwieku, this.opis);
+  final int idDzwieku;
+  final String opis;
+  _PrzyciskZDzwiekiemState createState() =>
+      _PrzyciskZDzwiekiemState(idDzwieku, opis);
+}
+
+class _PrzyciskZDzwiekiemState extends State<PrzyciskZDzwiekiem> {
+  final int idDzwieku;
+  final String opis;
+  _PrzyciskZDzwiekiemState(this.idDzwieku, this.opis);
+  Color _kolor;
+
+  @override
+  void initState() {
+    super.initState();
+    if (indeksKoloru + 1 == koloryPrzyciskow.length) {
+      indeksKoloru = 0;
+    } else {
+      indeksKoloru++;
+    }
+    _kolor = koloryPrzyciskow[indeksKoloru];
   }
-  Color _kolor = koloryPrzyciskow[indeksKoloru];
 
   bool _czyCiemny(Color kolor) {
     String string = kolor.toString();
@@ -33,35 +49,38 @@ GestureDetector przyciskZDzwiekiem(
     }
   }
 
-  return GestureDetector(
-    onLongPress: () {
-      dodajDoUlubionych(idDzwieku, opis);
-      final SnackBar snackBar = SnackBar(
-        content: Text('Dodano do ulubionych ❤'),
-        duration: Duration(seconds: 2),
-      );
-      Scaffold.of(context).showSnackBar(snackBar);
-    },
-    child: Container(
-      child: RaisedButton(
-        onPressed: () {
-          odtworzDzwiek(idDzwieku);
-          zmienDni();
-        },
-        child: AutoSizeText(
-          opis,
-          softWrap: true,
-          textAlign: TextAlign.center,
-          maxLines: 2,
-          style: TextStyle(
-            fontSize: 12,
-            color: _czyCiemny(_kolor) ? Colors.white : Colors.black,
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onLongPress: () {
+        dodajDoUlubionych(idDzwieku, opis);
+        final SnackBar snackBar = SnackBar(
+          content: Text('Dodano do ulubionych ❤'),
+          duration: Duration(seconds: 2),
+        );
+        Scaffold.of(context).showSnackBar(snackBar);
+      },
+      child: Container(
+        child: RaisedButton(
+          onPressed: () {
+            odtworzDzwiek(idDzwieku);
+            zmienDni();
+          },
+          child: AutoSizeText(
+            opis,
+            softWrap: true,
+            textAlign: TextAlign.center,
+            maxLines: 2,
+            style: TextStyle(
+              fontSize: 12,
+              color: _czyCiemny(_kolor) ? Colors.white : Colors.black,
+            ),
+            minFontSize: 6,
+            overflow: TextOverflow.ellipsis,
           ),
-          minFontSize: 6,
-          overflow: TextOverflow.ellipsis,
+          color: _kolor,
         ),
-        color: _kolor,
       ),
-    ),
-  );
+    );
+  }
 }

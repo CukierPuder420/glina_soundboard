@@ -17,7 +17,7 @@ class _UlubioneState extends State<Ulubione> {
         leading: IconButton(
             icon: Icon(Icons.arrow_back),
             onPressed: () {
-              Navigator.pop(context);
+              Navigator.of(context).pop();
             }),
       ),
       body: ListView.separated(

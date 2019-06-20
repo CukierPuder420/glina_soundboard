@@ -41,7 +41,7 @@ class _SplashScreenState extends State<SplashScreen> {
         .catchError(print)
         .then((_) {
           koloryPrzyciskow = paleta.doListyRGB();
-        })
+        }).catchError(print)
         .then((_) async {
           iloscDni = await odczytajDni();
         })
