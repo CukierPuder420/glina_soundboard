@@ -22,7 +22,7 @@ class _UlubioneState extends State<Ulubione> {
       ),
       body: ListView.separated(
         separatorBuilder: (context, index) => Divider(
-              color: Colors.grey,
+              color: Colors.pink,
             ),
         itemCount: dlugoscListy,
         itemBuilder: (context, index) {

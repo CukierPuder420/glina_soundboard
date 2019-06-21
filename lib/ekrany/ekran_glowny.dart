@@ -31,8 +31,8 @@ class _EkranGlownyState extends State<EkranGlownyState> {
               slivers: <Widget>[
                 SliverAppBar(
                   title: Text('Glina soundboard'),
-                  backgroundColor: Colors.green,
-                  expandedHeight: 400.0,
+                  backgroundColor: Colors.greenAccent,
+                  expandedHeight: 300,
                   floating: true,
                   pinned: true,
                   flexibleSpace: FlexibleSpaceBar(
@@ -76,7 +76,7 @@ class _EkranGlownyState extends State<EkranGlownyState> {
                 ),
                 SliverGrid.count(
                   crossAxisCount: 4,
-                  children: <Widget>[
+                  children: <Widget> [
                     PrzyciskZDzwiekiem(1, 'AAAAA kurwa'),
                     PrzyciskZDzwiekiem(2, 'lalloueciak napleciak'),
                     PrzyciskZDzwiekiem(3, 'strasznie głupio'),
