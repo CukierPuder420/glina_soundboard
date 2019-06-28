@@ -16,11 +16,14 @@ class PrzyciskZDzwiekiem extends StatefulWidget {
       _PrzyciskZDzwiekiemState(idDzwieku, opis);
 }
 
-class _PrzyciskZDzwiekiemState extends State<PrzyciskZDzwiekiem> {
+class _PrzyciskZDzwiekiemState extends State<PrzyciskZDzwiekiem> with AutomaticKeepAliveClientMixin<PrzyciskZDzwiekiem> {
   final int idDzwieku;
   final String opis;
   _PrzyciskZDzwiekiemState(this.idDzwieku, this.opis);
   Color _kolor;
+
+  @override
+  bool get wantKeepAlive => true;
 
   @override
   void initState() {
