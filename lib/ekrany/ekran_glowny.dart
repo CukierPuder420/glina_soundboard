@@ -30,7 +30,7 @@ class _EkranGlownyState extends State<EkranGlownyState> {
         builder: (context) => CustomScrollView(
               slivers: <Widget>[
                 SliverAppBar(
-                  title: Text('Glina soundboard'),
+                  title: Text('Glina Soundboard'),
                   backgroundColor: Colors.greenAccent,
                   expandedHeight: 300,
                   floating: true,
@@ -76,7 +76,7 @@ class _EkranGlownyState extends State<EkranGlownyState> {
                 ),
                 SliverGrid.count(
                   crossAxisCount: 4,
-                  children: <Widget> [
+                  children: <Widget>[
                     PrzyciskZDzwiekiem(1, 'AAAAA kurwa'),
                     PrzyciskZDzwiekiem(2, 'lalloueciak napleciak'),
                     PrzyciskZDzwiekiem(3, 'strasznie głupio'),
@@ -125,6 +125,9 @@ class _EkranGlownyState extends State<EkranGlownyState> {
                     PrzyciskZDzwiekiem(48, '500-'),
                     PrzyciskZDzwiekiem(49, 'jak zwykle'),
                     PrzyciskZDzwiekiem(50, 'powstanie styczniowe'),
+                    PrzyciskZDzwiekiem(51, 'jeszcze raz'),
+                    PrzyciskZDzwiekiem(52, 'baniura'),
+                    PrzyciskZDzwiekiem(53, 'wakacje'),
                   ],
                 ),
               ],

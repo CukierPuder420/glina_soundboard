@@ -26,7 +26,6 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-
     odczytajListeInty()
         .then((_inty) {
           ulubioneInty = _inty;

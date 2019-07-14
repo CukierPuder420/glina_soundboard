@@ -54,6 +54,7 @@ class _PrzyciskZDzwiekiemState extends State<PrzyciskZDzwiekiem> with AutomaticK
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return GestureDetector(
       onLongPress: () {
         dodajDoUlubionych(idDzwieku, opis);
@@ -63,8 +64,7 @@ class _PrzyciskZDzwiekiemState extends State<PrzyciskZDzwiekiem> with AutomaticK
         );
         Scaffold.of(context).showSnackBar(snackBar);
       },
-      child: Container(
-        child: RaisedButton(
+      child: RaisedButton(
           onPressed: () {
             odtworzDzwiek(idDzwieku);
             zmienDni();
@@ -83,7 +83,6 @@ class _PrzyciskZDzwiekiemState extends State<PrzyciskZDzwiekiem> with AutomaticK
           ),
           color: _kolor,
         ),
-      ),
     );
   }
 }

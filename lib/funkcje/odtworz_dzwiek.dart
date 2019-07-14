@@ -177,6 +177,15 @@ void odtworzDzwiek(int idDzwieku) async {
     case 50:
       nazwaDzwieku = 'powstanie_styczniowe';
       break;
+    case 51:
+      nazwaDzwieku = 'jeszcze_raz';
+      break;
+    case 52:
+      nazwaDzwieku = 'baniura';
+      break;
+    case 53:
+      nazwaDzwieku = 'wakacje';
+      break;
   }
 
   String sciezkaPliku = 'audio/przyciski/' + nazwaDzwieku + '.mp3';

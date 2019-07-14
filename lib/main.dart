@@ -16,7 +16,7 @@ class GlinaSoundboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Glina soundboard',
+      title: 'Glina Soundboard',
       theme: ThemeData(
         primarySwatch: Colors.pink,
       ),

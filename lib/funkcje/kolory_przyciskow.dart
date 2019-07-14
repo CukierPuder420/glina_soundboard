@@ -50,9 +50,9 @@ class Paleta {
 }
 
 List<Color> koloryPrzyciskow = [
-	HexColor('ff3377'),
-	HexColor('ff5588'),
-	HexColor('ff77aa'),
-	HexColor('ff99cc'),
-	HexColor('ffbbee'),
+	HexColor('11575B'),
+	HexColor('80AE13'),
+	HexColor('E6BE16'),
+	HexColor('FE8A08'),
+	HexColor('EB2E1B'),
 ];
