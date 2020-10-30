@@ -1,10 +1,11 @@
-import 'package:flutter/material.dart';
-import 'package:glina_soundboard/ekrany/ekran_glowny.dart';
-import 'package:glina_soundboard/funkcje/dodaj_do_ulubionych.dart';
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:glina_soundboard/funkcje/kolory_przyciskow.dart';
-import 'package:glina_soundboard/funkcje/dni.dart';
+import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
+
+import '../funkcje/dni.dart';
+import '../funkcje/dodaj_do_ulubionych.dart';
+import '../funkcje/kolory_przyciskow.dart';
+import 'ekran_glowny.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -36,11 +37,12 @@ class _SplashScreenState extends State<SplashScreen> {
         .then((_) async {
           paleta = await pobierzPalete();
         })
-        .timeout(Duration(seconds: 2))
+        .timeout(const Duration(seconds: 2))
         .catchError(print)
         .then((_) {
           koloryPrzyciskow = paleta.doListyRGB();
-        }).catchError(print)
+        })
+        .catchError(print)
         .then((_) async {
           iloscDni = await odczytajDni();
         })
@@ -55,11 +57,7 @@ class _SplashScreenState extends State<SplashScreen> {
         })
         .then((_) {
           Navigator.pushReplacement(
-              context,
-              PageTransition(
-                  type: PageTransitionType.downToUp,
-                  child: EkranGlownyState(),
-                  duration: Duration(milliseconds: 500)));
+              context, PageTransition<Widget>(type: PageTransitionType.bottomToTop, child: EkranGlownyState(), duration: const Duration(milliseconds: 500)));
         });
   }
 
@@ -78,10 +76,10 @@ class _SplashScreenState extends State<SplashScreen> {
           Center(
             child: Container(
               height: 80,
-              margin: EdgeInsets.all(25),
+              margin: const EdgeInsets.all(25),
               color: Colors.white70,
-              alignment: Alignment(0, 0),
-              child: AutoSizeText.rich(
+              alignment: const Alignment(0, 0),
+              child: const AutoSizeText.rich(
                 TextSpan(text: 'Glina Soundboard'),
                 maxLines: 1,
                 textAlign: TextAlign.center,

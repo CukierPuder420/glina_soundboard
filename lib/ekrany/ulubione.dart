@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:glina_soundboard/funkcje/dodaj_do_ulubionych.dart';
-import 'package:glina_soundboard/funkcje/odtworz_dzwiek.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
+
+import '../funkcje/dodaj_do_ulubionych.dart';
+import '../funkcje/odtworz_dzwiek.dart';
 
 class Ulubione extends StatefulWidget {
   @override
@@ -13,17 +14,14 @@ class _UlubioneState extends State<Ulubione> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Ulubione'),
+        title: const Text('Ulubione'),
         leading: IconButton(
-            icon: Icon(Icons.arrow_back),
-            onPressed: () {
-              Navigator.of(context).pop();
-            }),
+          icon: const Icon(Icons.arrow_back),
+          onPressed: Navigator.of(context).pop,
+        ),
       ),
       body: ListView.separated(
-        separatorBuilder: (context, index) => Divider(
-              color: Colors.pink,
-            ),
+        separatorBuilder: (context, index) => const Divider(color: Colors.pink),
         itemCount: dlugoscListy,
         itemBuilder: (context, index) {
           final numer = ulubioneInty[index];
@@ -32,13 +30,11 @@ class _UlubioneState extends State<Ulubione> {
             child: Container(
               child: ListTile(
                 title: Text(opis),
-                leading: Icon(Icons.play_arrow),
-                onTap: () {
-                  odtworzDzwiek(numer);
-                },
+                leading: const Icon(Icons.play_arrow),
+                onTap: () => odtworzDzwiek(numer),
               ),
             ),
-            delegate: SlidableDrawerDelegate(),
+            delegate: const SlidableDrawerDelegate(),
             actions: <Widget>[
               IconSlideAction(
                 caption: 'Usuń',
@@ -46,7 +42,7 @@ class _UlubioneState extends State<Ulubione> {
                 icon: Icons.delete,
                 onTap: () {
                   usunZUlubionych(numer, opis);
-                  super.setState(() {});
+                  setState(() {});
                 },
               ),
             ],

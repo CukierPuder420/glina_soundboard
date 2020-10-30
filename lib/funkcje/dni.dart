@@ -8,33 +8,33 @@ int iloscDni = 0;
 DateTime wczoraj;
 
 void zapiszDate(DateTime czas) async {
-  SharedPreferences sp = await SharedPreferences.getInstance();
-  String bufor = czas.toIso8601String();
+  final sp = await SharedPreferences.getInstance();
+  final bufor = czas.toIso8601String();
   sp.setString(kluczWczoraj, bufor);
 }
 
 Future<DateTime> odczytajDate() async {
-  SharedPreferences sp = await SharedPreferences.getInstance();
+  final sp = await SharedPreferences.getInstance();
   if (sp.containsKey(kluczWczoraj)) {
-    String bufor = sp.getString(kluczWczoraj);
-    DateTime data = DateTime.parse(bufor);
+    final bufor = sp.getString(kluczWczoraj);
+    final data = DateTime.parse(bufor);
     return data;
   } else {
-    DateTime data = DateTime.now();
+    final data = DateTime.now();
     zapiszDate(data);
     return data;
   }
 }
 
-void zapiszDni(int dni) async {
-  SharedPreferences sp = await SharedPreferences.getInstance();
+void zapiszDni(final int dni) async {
+  final sp = await SharedPreferences.getInstance();
   sp.setInt(kluczDni, dni);
 }
 
 Future<int> odczytajDni() async {
-  SharedPreferences sp = await SharedPreferences.getInstance();
+  final sp = await SharedPreferences.getInstance();
   if (sp.containsKey(kluczDni)) {
-    int bufor = sp.getInt(kluczDni);
+    final bufor = sp.getInt(kluczDni);
     return bufor;
   } else {
     sp.setInt(kluczDni, 0);
@@ -43,7 +43,7 @@ Future<int> odczytajDni() async {
 }
 
 void usunDni() async {
-  if (DateTime.now().isAfter(wczoraj.add(Duration(days: 1, hours: 23)))) {
+  if (DateTime.now().isAfter(wczoraj.add(const Duration(days: 1, hours: 23)))) {
     iloscDni = 0;
     zapiszDni(iloscDni);
     wczoraj = DateTime.now();
@@ -52,13 +52,13 @@ void usunDni() async {
 }
 
 void zmienDni() async {
-  if ((DateTime.now().isBefore(wczoraj.add(Duration(days: 1, hours: 23)))) &&
-      (DateTime.now().isAfter(wczoraj.add(Duration(hours: 23))))) {
+  if ((DateTime.now().isBefore(wczoraj.add(const Duration(days: 1, hours: 23)))) && (DateTime.now().isAfter(wczoraj.add(const Duration(hours: 23))))) {
     iloscDni = await odczytajDni();
     iloscDni++;
     zapiszDni(iloscDni);
     wczoraj = DateTime.now();
     zapiszDate(wczoraj);
-  } else
+  } else {
     usunDni();
+  }
 }

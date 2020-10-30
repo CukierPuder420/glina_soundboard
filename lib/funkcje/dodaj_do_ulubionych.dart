@@ -3,52 +3,50 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 const String kluczNumery = 'glinasoundboard_ulubione_numery';
 const String kluczOpisy = 'glinasoundboard_ulubione_opisy';
-List<int> ulubioneInty = List();
-List<String> ulubioneOpisy = List();
+var ulubioneInty = <int>[];
+var ulubioneOpisy = <String>[];
 int dlugoscListy;
 
-void zapiszListe(List<String> ulubioneNumery, List<String> ulubioneOpisy) async {
-  SharedPreferences sp = await SharedPreferences.getInstance();
+void zapiszListe(final List<String> ulubioneNumery, final List<String> ulubioneOpisy) async {
+  final sp = await SharedPreferences.getInstance();
   sp.setStringList(kluczNumery, ulubioneNumery);
   sp.setStringList(kluczOpisy, ulubioneOpisy);
 }
 
 void usunListy() async {
-  SharedPreferences sp = await SharedPreferences.getInstance();
+  final sp = await SharedPreferences.getInstance();
   sp.remove(kluczNumery);
   sp.remove(kluczOpisy);
 }
 
 Future<List<String>> odczytajListeNumery() async {
-  SharedPreferences sp = await SharedPreferences.getInstance();
+  final sp = await SharedPreferences.getInstance();
   if (!sp.containsKey(kluczNumery)) {
-    List<String> bufor = List();
-    sp.setStringList(kluczNumery, bufor);
+    sp.setStringList(kluczNumery, <String>[]);
   }
   return sp.getStringList(kluczNumery);
 }
 
 Future<List<String>> odczytajListeOpisy() async {
-  SharedPreferences sp = await SharedPreferences.getInstance();
+  final sp = await SharedPreferences.getInstance();
   if (!sp.containsKey(kluczOpisy)) {
-    List<String> bufor = List();
-    sp.setStringList(kluczOpisy, bufor);
+    sp.setStringList(kluczOpisy, <String>[]);
   }
   return sp.getStringList(kluczOpisy);
 }
 
 Future<List<int>> odczytajListeInty() async {
-  List<String> stringi = await odczytajListeNumery();
-  List<int> inty = List();
-  for (String i in stringi) {
+  final stringi = await odczytajListeNumery();
+  final inty = <int>[];
+  for (final i in stringi) {
     inty.add(int.parse(i));
   }
   return inty;
 }
 
-List<String> intyNaStringi(List<int> inty) {
-  List<String> stringi = List();
-  for (int i in inty) {
+List<String> intyNaStringi(final List<int> inty) {
+  final stringi = <String>[];
+  for (final i in inty) {
     stringi.add(i.toString());
   }
   return stringi;
@@ -56,7 +54,7 @@ List<String> intyNaStringi(List<int> inty) {
 
 int iloscUlubionych() => ulubioneInty.length;
 
-void dodajDoUlubionych(int idDzwieku, String opisDzwieku) async {
+void dodajDoUlubionych(final int idDzwieku, final String opisDzwieku) async {
   ulubioneInty.add(idDzwieku);
   ulubioneOpisy.add(opisDzwieku);
   dlugoscListy = iloscUlubionych();
@@ -70,7 +68,7 @@ void dodajDoUlubionych(int idDzwieku, String opisDzwieku) async {
   zapiszListe(intyNaStringi(ulubioneInty), ulubioneOpisy);
 }
 
-void usunZUlubionych(int idDzwieku, String opisDzwieku) async {
+void usunZUlubionych(final int idDzwieku, final String opisDzwieku) async {
   ulubioneInty.remove(idDzwieku);
   ulubioneOpisy.remove(opisDzwieku);
   dlugoscListy = iloscUlubionych();

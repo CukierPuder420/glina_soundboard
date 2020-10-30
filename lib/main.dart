@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:glina_soundboard/ekrany/splashscreen.dart';
 import 'package:flutter/services.dart';
 
+import 'ekrany/splashscreen.dart';
+
 /// Czeka, aż orientacja ekranu zablokuje się w pionie i wyświetla GlinaSoundboard().
-void main() {
-  SystemChrome.setPreferredOrientations([
+void main() async {
+  await SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
-  ]).then((_) {
-    runApp(GlinaSoundboard());
-  });
+  ]);
+  runApp(GlinaSoundboard());
 }
 
 class GlinaSoundboard extends StatelessWidget {
@@ -17,9 +17,7 @@ class GlinaSoundboard extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Glina Soundboard',
-      theme: ThemeData(
-        primarySwatch: Colors.pink,
-      ),
+      theme: ThemeData(primarySwatch: Colors.pink),
       home: SplashScreen(),
     );
   }

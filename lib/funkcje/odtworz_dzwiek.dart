@@ -3,13 +3,13 @@ import 'dart:math';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:audioplayers/audio_cache.dart';
 
-AudioPlayer audioPlayer = AudioPlayer();
-AudioCache audioCache = AudioCache();
+final audioPlayer = AudioPlayer();
+final audioCache = AudioCache();
 
-var randomizer = Random();
+final randomizer = Random();
 
 void arrr() async {
-  int wybor = randomizer.nextInt(3);
+  final wybor = randomizer.nextInt(3);
   switch (wybor) {
     case 0:
       await audioCache.play('audio/AAAARRRR.mp3');
@@ -27,8 +27,8 @@ void major() async {
   await audioCache.play('audio/major.mp3');
 }
 
-void odtworzDzwiek(int idDzwieku) async {
-  var nazwaDzwieku;
+void odtworzDzwiek(final int idDzwieku) async {
+  String nazwaDzwieku;
   switch (idDzwieku) {
     case 1:
       nazwaDzwieku = 'AAAAA_kurwa';
@@ -188,6 +188,6 @@ void odtworzDzwiek(int idDzwieku) async {
       break;
   }
 
-  String sciezkaPliku = 'audio/przyciski/' + nazwaDzwieku + '.mp3';
+  final sciezkaPliku = 'audio/przyciski/$nazwaDzwieku.mp3';
   await audioCache.play(sciezkaPliku);
 }
